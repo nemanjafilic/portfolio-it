@@ -9,13 +9,12 @@
     :root {
       --bg: #08111f;
       --panel: #101d30;
-      --panel-2: #13253d;
+      --panel-dark: #0c1829;
       --text: #edf4ff;
       --muted: #aab8cc;
       --blue: #47a6ff;
       --green: #50d890;
-      --orange: #ffc46b;
-      --border: rgba(162, 195, 235, .16);
+      --border: rgba(162, 195, 235, .17);
     }
 
     * { box-sizing: border-box; }
@@ -24,27 +23,27 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
       background:
-        radial-gradient(circle at 85% 5%, rgba(71,166,255,.16), transparent 28rem),
+        radial-gradient(circle at 85% 4%, rgba(71,166,255,.16), transparent 30rem),
         radial-gradient(circle at 5% 45%, rgba(80,216,144,.08), transparent 25rem),
         var(--bg);
     }
 
     .container {
-      width: min(1100px, calc(100% - 40px));
+      width: min(1120px, calc(100% - 40px));
       margin: auto;
     }
 
     nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(8,17,31,.84);
-      backdrop-filter: blur(14px);
+      z-index: 10;
       border-bottom: 1px solid var(--border);
+      background: rgba(8,17,31,.85);
+      backdrop-filter: blur(14px);
     }
 
     .nav-content {
@@ -58,17 +57,17 @@
     .logo {
       color: white;
       font-weight: 800;
-      letter-spacing: .3px;
       text-decoration: none;
+      letter-spacing: .2px;
     }
 
     .logo span { color: var(--blue); }
 
     nav a {
-      color: var(--muted);
-      text-decoration: none;
       margin-left: 20px;
+      color: var(--muted);
       font-size: .92rem;
+      text-decoration: none;
     }
 
     nav a:hover { color: white; }
@@ -84,8 +83,8 @@
     .tag {
       display: inline-block;
       padding: 6px 12px;
-      border-radius: 99px;
       border: 1px solid rgba(80,216,144,.35);
+      border-radius: 99px;
       background: rgba(80,216,144,.08);
       color: var(--green);
       font-size: .83rem;
@@ -104,15 +103,12 @@
       font-style: normal;
     }
 
-    h2 {
-      margin: 0 0 10px;
-      font-size: 2rem;
-    }
-
-    h3 { margin: 0 0 8px; }
+    h2 { margin: 0 0 10px; font-size: 2rem; }
+    h3 { margin: 0 0 8px; font-size: 1.35rem; }
+    h4 { margin: 0 0 8px; }
 
     .intro {
-      max-width: 650px;
+      max-width: 660px;
       color: var(--muted);
       font-size: 1.1rem;
     }
@@ -128,27 +124,23 @@
       display: inline-block;
       padding: 12px 18px;
       border-radius: 9px;
-      text-decoration: none;
       font-weight: bold;
-      transition: transform .2s, background .2s;
+      text-decoration: none;
+      transition: transform .2s;
     }
 
     .button:hover { transform: translateY(-2px); }
 
-    .primary {
-      color: #05101f;
-      background: var(--blue);
-    }
+    .primary { color: #06111f; background: var(--blue); }
+    .secondary { color: white; border: 1px solid var(--border); }
 
-    .secondary {
-      color: white;
-      border: 1px solid var(--border);
-    }
-
-    .profile-card, .card, .project-detail {
+    .profile-card,
+    .project,
+    .step,
+    .evidence {
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: rgba(16,29,48,.78);
+      background: rgba(16,29,48,.8);
     }
 
     .profile-card {
@@ -178,7 +170,6 @@
     }
 
     section { padding: 76px 0; }
-
     .tinted { background: rgba(255,255,255,.018); }
 
     .section-text {
@@ -187,17 +178,18 @@
       color: var(--muted);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+    .project {
+      margin-top: 24px;
+      padding: 30px;
+      scroll-margin-top: 90px;
     }
 
-    .card { padding: 24px; }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
     }
 
     .project-number {
@@ -208,83 +200,40 @@
       letter-spacing: 1px;
     }
 
-    .project-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card .button {
-      margin-top: 22px;
-      align-self: flex-start;
-      padding: 9px 13px;
-      font-size: .9rem;
-    }
-
-    .project-detail {
-      margin-top: 24px;
-      padding: 30px;
-      scroll-margin-top: 90px;
-    }
-
-    .detail-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-
-    .detail-header p {
+    .project-subtitle {
       margin: 0;
       color: var(--muted);
     }
 
-    .detail-grid {
+    .info-grid,
+    .steps,
+    .gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin: 22px 0;
+      gap: 16px;
     }
 
-    .mini-card {
+    .info-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(3, 1fr); margin: 22px 0; }
+    .gallery { grid-template-columns: repeat(3, 1fr); margin-top: 22px; }
+
+    .step {
       padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: rgba(6,14,27,.42);
+      background: rgba(6,14,27,.44);
     }
 
-    .mini-card h4 {
-      margin: 0 0 8px;
-      color: white;
-    }
-
-    .mini-card p, .mini-card li {
+    .step p,
+    .step li {
       margin: 0;
       color: var(--muted);
       font-size: .94rem;
     }
 
     ul {
-      margin: 10px 0 0;
+      margin: 8px 0 0;
       padding-left: 18px;
     }
 
-    .topology {
-      overflow-x: auto;
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid rgba(71,166,255,.25);
-      border-radius: 12px;
-      background: #07101e;
-      color: #cde5ff;
-      font-family: Consolas, Monaco, monospace;
-      font-size: .9rem;
-      line-height: 1.8;
-      white-space: pre;
-    }
-
     .result {
-      margin-top: 22px;
       padding: 16px 18px;
       border-left: 4px solid var(--green);
       border-radius: 8px;
@@ -292,6 +241,42 @@
     }
 
     .result strong { color: var(--green); }
+
+    .evidence {
+      overflow: hidden;
+      background: var(--panel-dark);
+      text-decoration: none;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .evidence:hover {
+      transform: translateY(-3px);
+      border-color: rgba(71,166,255,.7);
+    }
+
+    .evidence img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .caption {
+      display: block;
+      padding: 13px;
+      color: #d9e9ff;
+      font-size: .9rem;
+      font-weight: bold;
+    }
+
+    .caption small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-weight: normal;
+    }
 
     .skills {
       display: flex;
@@ -309,23 +294,25 @@
     }
 
     .contact { text-align: center; }
-
     .contact p { color: var(--muted); }
 
     footer {
       padding: 28px;
+      border-top: 1px solid var(--border);
       color: var(--muted);
       text-align: center;
       font-size: .9rem;
-      border-top: 1px solid var(--border);
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
       nav .links { display: none; }
-      .hero, .grid, .detail-grid { grid-template-columns: 1fr; }
+      .hero,
+      .info-grid,
+      .steps,
+      .gallery { grid-template-columns: 1fr; }
       .hero { padding: 70px 0; }
+      .project-header { flex-direction: column; }
       h1 { letter-spacing: -1px; }
-      .detail-header { flex-direction: column; }
     }
   </style>
 </head>
@@ -350,8 +337,8 @@
         <h1>Technicien support<br><em>informatique junior.</em></h1>
         <p class="intro">
           En reconversion vers les systèmes et réseaux, je développe des projets
-          concrets autour du support utilisateur, de l’administration réseau et
-          de la résolution d’incidents.
+          concrets autour du support utilisateur, de l’administration réseau,
+          du diagnostic et de la résolution d’incidents.
         </p>
         <div class="buttons">
           <a class="button primary" href="#projets">Voir mes projets</a>
@@ -374,9 +361,9 @@
         <h2>Mon objectif</h2>
         <p class="section-text">
           Intégrer une équipe IT en alternance afin de développer mes compétences
-          en support, déploiement de postes, systèmes et réseaux. Je travaille
-          avec une approche structurée : qualifier, diagnostiquer, tester,
-          documenter et clôturer l’intervention.
+          en support, déploiement de postes, systèmes et réseaux. Mes laboratoires
+          suivent une méthode simple : qualifier, diagnostiquer, corriger, tester
+          puis documenter la résolution.
         </p>
       </div>
     </section>
@@ -385,165 +372,168 @@
       <div class="container">
         <h2>Projets techniques</h2>
         <p class="section-text">
-          Deux laboratoires personnels réalisés pour mettre en pratique les notions
-          de réseau, de support et de gestion d’incidents.
+          Deux scénarios de support réalisés dans un environnement GLPI associé à
+          un laboratoire Cisco Packet Tracer.
         </p>
 
-        <div class="grid">
-          <article class="card project-card">
-            <div class="project-number">PROJET 01 · RÉSEAU</div>
-            <h3>Infrastructure réseau VLAN / DHCP</h3>
-            <p>
-              Conception et configuration d’un réseau d’agence sous Cisco Packet
-              Tracer : segmentation VLAN, service DHCP, routeur, switch,
-              imprimante et tests de connectivité.
-            </p>
-            <a class="button secondary" href="#projet-reseau">Voir le projet ↓</a>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-number">PROJET 02 · SUPPORT</div>
-            <h3>Gestion d’incident avec GLPI</h3>
-            <p>
-              Mise en place d’un environnement de ticketing et traitement complet
-              d’un incident « PC sans connexion réseau » : qualification,
-              diagnostic, résolution et traçabilité.
-            </p>
-            <a class="button secondary" href="#projet-glpi">Voir le projet ↓</a>
-          </article>
-        </div>
-
-        <article class="project-detail" id="projet-reseau">
-          <div class="detail-header">
+        <article class="project">
+          <div class="project-header">
             <div>
-              <div class="project-number">ÉTUDE DE CAS · PROJET 01</div>
-              <h3>Infrastructure réseau d’agence : VLAN et DHCP</h3>
-              <p>Laboratoire réalisé avec Cisco Packet Tracer.</p>
+              <div class="project-number">PROJET 01 · SUPPORT / IMPRESSION</div>
+              <h3>Incident d’impression — poste de réception</h3>
+              <p class="project-subtitle">
+                Qualification, vérification réseau puis résolution d’une tâche d’impression bloquée.
+              </p>
             </div>
-            <span class="tag">Réseau</span>
+            <span class="tag">GLPI · Support N1</span>
           </div>
 
-          <div class="detail-grid">
-            <div class="mini-card">
-              <h4>Objectif</h4>
+          <div class="info-grid">
+            <div class="step">
+              <h4>Situation</h4>
               <p>
-                Déployer une petite infrastructure d’agence fonctionnelle, isoler
-                les postes du service technique dans un VLAN dédié et automatiser
-                l’attribution des adresses IP.
+                Le poste de réception ne peut plus imprimer sur
+                <strong>Imprimante-Agence</strong>, alors que l’imprimante est allumée.
               </p>
             </div>
 
-            <div class="mini-card">
-              <h4>Environnement</h4>
+            <div class="step">
+              <h4>Diagnostic</h4>
               <ul>
-                <li>Routeur Cisco 2911</li>
-                <li>Switch Cisco 2960</li>
-                <li>Postes, ordinateur portable et imprimante</li>
-                <li>Cisco Packet Tracer</li>
+                <li>Contrôle de la connectivité du poste et de l’imprimante</li>
+                <li>Ping vers l’imprimante : <strong>192.168.0.5</strong></li>
+                <li>Identification d’une tâche bloquée dans la file d’impression</li>
               </ul>
             </div>
           </div>
 
-          <div class="topology">[ PC Tech 01 ] ─┐
-[ PC Tech 02 ] ─┼── VLAN 05 ── [ Switch 2960 ] ── trunk ── [ Routeur 2911 ]
-[ Imprimante ] ─┘                                          │
-                                                    DHCP / passerelle
-                                                    192.168.0.254</div>
-
-          <div class="detail-grid">
-            <div class="mini-card">
-              <h4>Configuration réalisée</h4>
-              <ul>
-                <li>Plan d’adressage IPv4 en /24</li>
-                <li>Passerelle par défaut : 192.168.0.254</li>
-                <li>Création du VLAN 05 pour le service technique</li>
-                <li>Attribution des ports d’accès aux postes Tech</li>
-                <li>Configuration d’un lien trunk vers le routeur</li>
-                <li>Pool DHCP et exclusion des adresses réservées</li>
-              </ul>
+          <div class="steps">
+            <div class="step">
+              <h4>1. Ticket pris en charge</h4>
+              <p>
+                Ticket catégorisé « Printing », attribué au technicien et relié
+                au poste PC-Accueil ainsi qu’à l’imprimante concernée.
+              </p>
             </div>
 
-            <div class="mini-card">
-              <h4>Vérifications effectuées</h4>
-              <ul>
-                <li>Obtention automatique d’une adresse IP par DHCP</li>
-                <li>Ping entre les postes du même réseau</li>
-                <li>Ping de la passerelle</li>
-                <li>Contrôle de l’état des VLAN et des ports du switch</li>
-                <li>Vérification de la connectivité de l’imprimante</li>
-              </ul>
+            <div class="step">
+              <h4>2. Réseau validé</h4>
+              <p>
+                Le PC-Accueil joint l’imprimante avec quatre réponses reçues et
+                aucune perte de paquets.
+              </p>
+            </div>
+
+            <div class="step">
+              <h4>3. Résolution</h4>
+              <p>
+                Suppression de la tâche bloquée, redémarrage du service
+                d’impression et test d’impression concluant.
+              </p>
             </div>
           </div>
 
           <div class="result">
-            <strong>Résultat :</strong> le poste ajouté au réseau a reçu une adresse
-            IP automatiquement et les tests de connectivité vers la passerelle et
-            les équipements du LAN ont été validés.
+            <strong>Résultat :</strong> l’imprimante est joignable sur le réseau,
+            l’impression est rétablie et le ticket est clôturé avec un compte rendu
+            exploitable par l’équipe support.
+          </div>
+
+          <div class="gallery">
+            <a class="evidence" href="glpi-imprimante-ticket.png" target="_blank">
+              <img src="glpi-imprimante-ticket.png" alt="Ticket GLPI imprimante en cours de traitement">
+              <span class="caption">Ticket attribué<small>Demande, priorité, équipement et technicien associés</small></span>
+            </a>
+
+            <a class="evidence" href="packet-tracer-imprimante-connectivite.png" target="_blank">
+              <img src="packet-tracer-imprimante-connectivite.png" alt="Test de connectivité Packet Tracer vers imprimante">
+              <span class="caption">Connectivité validée<small>Ping PC-Accueil vers imprimante : 0 % de perte</small></span>
+            </a>
+
+            <a class="evidence" href="glpi-imprimante-resolution.png" target="_blank">
+              <img src="glpi-imprimante-resolution.png" alt="Résolution GLPI incident impression">
+              <span class="caption">Incident résolu<small>File débloquée, service relancé et page test imprimée</small></span>
+            </a>
           </div>
         </article>
 
-        <article class="project-detail" id="projet-glpi">
-          <div class="detail-header">
+        <article class="project">
+          <div class="project-header">
             <div>
-              <div class="project-number">ÉTUDE DE CAS · PROJET 02</div>
-              <h3>Gestion d’un incident réseau avec GLPI</h3>
-              <p>Simulation d’un traitement de ticket de support niveau 1.</p>
+              <div class="project-number">PROJET 02 · RÉSEAU / VLAN</div>
+              <h3>PC-Tech-02 sans connexion réseau</h3>
+              <p class="project-subtitle">
+                Diagnostic d’un port de switch affecté au mauvais VLAN et rétablissement de la connectivité.
+              </p>
             </div>
-            <span class="tag">Support IT</span>
+            <span class="tag">Cisco · VLAN</span>
           </div>
 
-          <div class="detail-grid">
-            <div class="mini-card">
-              <h4>Objectif</h4>
+          <div class="info-grid">
+            <div class="step">
+              <h4>Situation</h4>
               <p>
-                Simuler une intervention de support réaliste, depuis la création
-                du ticket jusqu’à sa clôture, tout en documentant les actions
-                réalisées.
+                Le poste <strong>PC-Tech-02</strong> ne peut plus accéder aux
+                ressources réseau ni joindre sa passerelle.
               </p>
             </div>
 
-            <div class="mini-card">
-              <h4>Environnement</h4>
-              <ul>
-                <li>GLPI déployé localement avec Docker Desktop</li>
-                <li>Windows 11 et WSL2</li>
-                <li>Inventaire d’équipements et utilisateurs</li>
-                <li>Réseau Packet Tracer associé au scénario</li>
-              </ul>
+            <div class="step">
+              <h4>Cause identifiée</h4>
+              <p>
+                Le port switch <strong>FastEthernet 0/5</strong> est affecté au
+                VLAN 1 au lieu du <strong>VLAN 20 — TECH</strong>.
+              </p>
             </div>
           </div>
 
-          <div class="detail-grid">
-            <div class="mini-card">
-              <h4>Scénario du ticket</h4>
+          <div class="steps">
+            <div class="step">
+              <h4>1. Ticket GLPI</h4>
               <p>
-                <strong>Demande :</strong> « PC-Tech-02 n’a pas de connexion réseau
-                et ne peut pas accéder aux ressources internes. »
-              </p>
-              <br>
-              <p>
-                Le ticket est catégorisé, priorisé et attribué au technicien pour
-                assurer un suivi clair de l’incident.
+                Demande qualifiée dans GLPI, affectée au technicien et classée
+                dans la catégorie réseau.
               </p>
             </div>
 
-            <div class="mini-card">
-              <h4>Diagnostic et résolution</h4>
-              <ul>
-                <li>Vérification de la configuration IP du poste</li>
-                <li>Test de la passerelle par ping</li>
-                <li>Contrôle du port et du VLAN sur le switch</li>
-                <li>Correction de la configuration réseau</li>
-                <li>Test final de connectivité</li>
-                <li>Compte rendu ajouté au ticket avant clôture</li>
-              </ul>
+            <div class="step">
+              <h4>2. Diagnostic</h4>
+              <p>
+                La passerelle `192.168.20.254` ne répond pas. Le contrôle du
+                switch confirme que Fa0/5 est dans le mauvais VLAN.
+              </p>
+            </div>
+
+            <div class="step">
+              <h4>3. Correction & test</h4>
+              <p>
+                Fa0/5 est réaffecté au VLAN 20. Les tests de ping vers la
+                passerelle redeviennent concluants.
+              </p>
             </div>
           </div>
 
           <div class="result">
-            <strong>Résultat :</strong> la connectivité du poste a été rétablie,
-            la résolution a été documentée dans GLPI et le ticket a été clôturé
-            avec une trace exploitable par l’équipe support.
+            <strong>Résultat :</strong> le poste est replacé dans son VLAN TECH,
+            la connectivité réseau est restaurée et la résolution est consignée
+            dans le ticket GLPI.
+          </div>
+
+          <div class="gallery">
+            <a class="evidence" href="glpi-pc-tech-02-ticket.png" target="_blank">
+              <img src="glpi-pc-tech-02-ticket.png" alt="Ticket GLPI PC-Tech-02 sans réseau résolu">
+              <span class="caption">Ticket et compte rendu<small>Demande utilisateur, analyse et clôture dans GLPI</small></span>
+            </a>
+
+            <a class="evidence" href="packet-tracer-vlan-erreur.png" target="_blank">
+              <img src="packet-tracer-vlan-erreur.png" alt="Erreur VLAN Packet Tracer avec ping échoué">
+              <span class="caption">Erreur confirmée<small>Passerelle inaccessible et port Fa0/5 dans VLAN 1</small></span>
+            </a>
+
+            <a class="evidence" href="packet-tracer-vlan-correction.png" target="_blank">
+              <img src="packet-tracer-vlan-correction.png" alt="Correction VLAN Packet Tracer avec ping réussi">
+              <span class="caption">Correction validée<small>Fa0/5 dans VLAN 20 et ping à 0 % de perte</small></span>
+            </a>
           </div>
         </article>
       </div>
@@ -553,11 +543,12 @@
       <div class="container">
         <h2>Compétences</h2>
         <p class="section-text">
-          Compétences acquises et actuellement consolidées à travers mes laboratoires.
+          Compétences consolidées à travers les laboratoires et les scénarios de support.
         </p>
 
         <div class="skills">
           <span class="skill">Support utilisateurs N1</span>
+          <span class="skill">GLPI & ticketing</span>
           <span class="skill">Windows</span>
           <span class="skill">Diagnostic matériel</span>
           <span class="skill">Adressage IPv4</span>
@@ -566,7 +557,6 @@
           <span class="skill">VLAN</span>
           <span class="skill">Switch & routeur Cisco</span>
           <span class="skill">Cisco Packet Tracer</span>
-          <span class="skill">GLPI & ticketing</span>
           <span class="skill">Documentation technique</span>
           <span class="skill">Anglais C1</span>
         </div>
