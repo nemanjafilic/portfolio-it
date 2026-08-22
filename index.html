@@ -6,6 +6,10 @@
   <meta name="description" content="Portfolio de Nemanja Filic, candidat en alternance en support informatique, systèmes et réseaux à Toulouse.">
   <title>Nemanja Filic | Portfolio IT</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #08111f;
@@ -31,7 +35,7 @@
     body {
       margin: 0;
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
       line-height: 1.6;
       background:
         radial-gradient(circle at 85% 4%, rgba(88, 179, 255, 0.15), transparent 30rem),
@@ -71,14 +75,17 @@
     }
 
     .section-title {
-      max-width: 760px;
+      max-width: 800px;
       margin-bottom: 32px;
     }
 
     .section-title h2 {
       margin: 0 0 10px;
+      font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
       line-height: 1.1;
+      letter-spacing: -0.04em;
     }
 
     .section-title p {
@@ -86,7 +93,7 @@
       color: var(--muted);
     }
 
-    /* NAVIGATION */
+    /* Navigation */
 
     nav {
       position: sticky;
@@ -110,6 +117,7 @@
       align-items: center;
       gap: 10px;
       color: white;
+      font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-weight: 800;
       text-decoration: none;
     }
@@ -149,6 +157,11 @@
       background: rgba(255, 255, 255, 0.05);
     }
 
+    .nav-links .cv-link {
+      color: white;
+      border: 1px solid var(--border);
+    }
+
     .nav-links .contact-link {
       margin-left: 5px;
       color: #06111f;
@@ -160,7 +173,7 @@
       background: #83c8ff;
     }
 
-    /* ACCUEIL */
+    /* Accueil */
 
     .hero {
       min-height: 650px;
@@ -195,7 +208,9 @@
 
     h1 {
       margin: 20px 0;
+      font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-size: clamp(3rem, 6vw, 5.2rem);
+      font-weight: 800;
       line-height: 1;
       letter-spacing: -3px;
     }
@@ -227,6 +242,7 @@
       padding: 12px 18px;
       border: 1px solid var(--border);
       border-radius: 10px;
+      font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-weight: bold;
       text-decoration: none;
     }
@@ -257,6 +273,16 @@
       content: "•";
       margin-right: 7px;
       color: var(--green);
+    }
+
+    .hero-info a {
+      color: #cfe4fa;
+      text-decoration: none;
+    }
+
+    .hero-info a:hover {
+      color: var(--blue);
+      text-decoration: underline;
     }
 
     .photo-card {
@@ -296,7 +322,7 @@
       font-size: 0.78rem;
     }
 
-    /* COMPÉTENCES */
+    /* Compétences */
 
     .skill-note {
       margin-bottom: 22px;
@@ -370,7 +396,7 @@
       color: #dcecff;
     }
 
-    /* PARCOURS */
+    /* Parcours */
 
     .career-grid {
       display: grid;
@@ -397,6 +423,7 @@
     .career-card h3,
     .promise-card h3 {
       margin: 9px 0 4px;
+      font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-size: 1.4rem;
     }
 
@@ -433,7 +460,11 @@
 
     .promise-card {
       border-color: rgba(86, 223, 160, 0.25);
-      background: linear-gradient(145deg, rgba(86, 223, 160, 0.075), var(--card));
+      background: linear-gradient(
+        145deg,
+        rgba(86, 223, 160, 0.075),
+        var(--card)
+      );
     }
 
     .promise-list {
@@ -454,7 +485,7 @@
       font-weight: bold;
     }
 
-    /* PROJETS */
+    /* Projets */
 
     .project {
       margin-top: 24px;
@@ -482,6 +513,7 @@
 
     .project h3 {
       margin: 7px 0 6px;
+      font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-size: 1.6rem;
     }
 
@@ -596,7 +628,7 @@
       font-weight: normal;
     }
 
-    /* CONTACT */
+    /* Contact */
 
     .contact-box {
       padding: 50px;
@@ -608,7 +640,9 @@
 
     .contact-box h2 {
       margin: 0 0 10px;
+      font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.035em;
     }
 
     .contact-box p {
@@ -621,6 +655,32 @@
       justify-content: center;
     }
 
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .contact-detail {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: #dcecff;
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-detail:hover {
+      border-color: rgba(88, 179, 255, 0.65);
+      color: var(--blue);
+    }
+
     footer {
       padding: 28px 20px;
       border-top: 1px solid var(--border);
@@ -629,7 +689,7 @@
       font-size: 0.85rem;
     }
 
-    /* TABLETTE */
+    /* Tablette */
 
     @media (max-width: 850px) {
       .hero {
@@ -654,7 +714,7 @@
       }
     }
 
-    /* MOBILE */
+    /* Mobile */
 
     @media (max-width: 650px) {
       .container {
@@ -723,7 +783,8 @@
         <a href="#competences">Compétences</a>
         <a href="#parcours">Parcours</a>
         <a href="#projets">Projets</a>
-        <a class="contact-link" href="#contact">Me contacter</a>
+        <a class="cv-link" href="CV-Nemanja-Filic.pdf" target="_blank">CV</a>
+        <a class="contact-link" href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -731,7 +792,9 @@
   <main>
     <header class="container hero" id="accueil">
       <div>
-        <span class="availability">Disponible pour une alternance dès septembre 2026</span>
+        <span class="availability">
+          Disponible immédiatement pour une alternance
+        </span>
 
         <h1>
           Support informatique,<br>
@@ -739,14 +802,25 @@
         </h1>
 
         <p class="hero-text">
-          Je suis <strong>Nemanja Filic</strong>, en reconversion vers l’informatique
-          et candidat en BTS SIO SISR ou Titre TSSR à Toulouse. À travers mes
-          laboratoires, j’apprends à qualifier une demande, diagnostiquer sa cause,
-          corriger l’incident, tester puis documenter la solution.
+          Je suis <strong>Nemanja Filic</strong>, en reconversion vers
+          l’informatique et candidat en BTS SIO SISR ou Titre TSSR à Toulouse.
+          À travers mes laboratoires, j’apprends à qualifier une demande,
+          diagnostiquer sa cause, corriger l’incident, tester puis documenter
+          la solution.
         </p>
 
         <div class="buttons">
-          <a class="button primary" href="#projets">Voir mes projets</a>
+          <a class="button primary" href="#projets">
+            Voir mes projets
+          </a>
+
+          <a
+            class="button secondary"
+            href="CV-Nemanja-Filic.pdf"
+            target="_blank"
+          >
+            Consulter mon CV
+          </a>
 
           <a
             class="button secondary"
@@ -759,9 +833,19 @@
         </div>
 
         <ul class="hero-info">
-          <li>Toulouse et périphérie</li>
-          <li>Permis A & B — véhiculé</li>
-          <li>Anglais C1 — serbe courant</li>
+          <li>
+            <a href="tel:+33767749553">07 67 74 95 53</a>
+          </li>
+
+          <li>
+            <a href="mailto:nemanja.filic@outlook.fr">
+              nemanja.filic@outlook.fr
+            </a>
+          </li>
+
+          <li>
+            Toulouse et périphérie — permis A/B et véhiculé
+          </li>
         </ul>
       </div>
 
@@ -780,12 +864,12 @@
         <div class="section-title">
           <p class="eyebrow">Compétences techniques</p>
 
-          <h2>Ce que je pratique déjà</h2>
+          <h2>Compétences mises en pratique</h2>
 
           <p>
-            Des bases acquises par la pratique dans mes laboratoires GLPI et
-            Cisco Packet Tracer. Clique sur une compétence pour voir comment
-            je l’ai travaillée.
+            Des bases acquises par la pratique dans mes laboratoires GLPI
+            et Cisco Packet Tracer. Chaque compétence est accompagnée
+            d’un exemple précis de mise en pratique.
           </p>
         </div>
 
@@ -802,6 +886,7 @@
                 <strong>Support utilisateurs N1</strong>
                 <span>Qualification et résolution</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
@@ -818,6 +903,7 @@
                 <strong>GLPI & ticketing</strong>
                 <span>Suivi des demandes</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
@@ -834,6 +920,7 @@
                 <strong>Adressage IPv4</strong>
                 <span>IP, masque et passerelle</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
@@ -849,13 +936,14 @@
                 <strong>DHCP & DNS</strong>
                 <span>Services réseau</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
             <p class="skill-description">
-              Pool DHCP configuré sur routeur Cisco avec plage, exclusions et
-              passerelle par défaut. Le DNS est compris dans son principe et
-              reste en cours de consolidation.
+              Pool DHCP configuré sur routeur Cisco avec plage, exclusions
+              et passerelle par défaut. Le DNS est compris dans son principe
+              et reste en cours de consolidation.
             </p>
           </details>
 
@@ -865,6 +953,7 @@
                 <strong>VLAN & commutation</strong>
                 <span>Segmentation du réseau</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
@@ -881,13 +970,14 @@
                 <strong>Cisco Packet Tracer</strong>
                 <span>Laboratoire d’agence</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
             <p class="skill-description">
-              Réseau construit avec postes, imprimante, switch 2960 et routeur
-              2911 : adressage, DHCP, VLAN, commandes CLI, pings et simulation
-              de pannes.
+              Réseau construit avec postes, imprimante, switch 2960 et
+              routeur 2911 : adressage, DHCP, VLAN, commandes CLI, pings
+              et simulation de pannes.
             </p>
           </details>
 
@@ -897,6 +987,7 @@
                 <strong>Windows & matériel</strong>
                 <span>Postes de travail</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
@@ -912,6 +1003,7 @@
                 <strong>Documentation technique</strong>
                 <span>Traçabilité des actions</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
@@ -928,6 +1020,7 @@
                 <strong>Anglais C1</strong>
                 <span>Documentation et échanges</span>
               </span>
+
               <span class="plus">+</span>
             </summary>
 
@@ -945,12 +1038,13 @@
         <div class="section-title">
           <p class="eyebrow">Parcours professionnel</p>
 
-          <h2>Une reconversion, pas un départ de zéro</h2>
+          <h2>Une expérience opérationnelle transférable à l’IT</h2>
 
           <p>
-            Mon expérience en restauration m’a appris la relation client,
-            la gestion des priorités et la fiabilité sous pression.
-            Je transpose aujourd’hui ces acquis au support informatique.
+            Plusieurs années dans un environnement exigeant m’ont appris à
+            coordonner une activité, gérer les priorités et maintenir un haut
+            niveau de service sous pression. Je transpose aujourd’hui ces
+            acquis au support informatique.
           </p>
         </div>
 
@@ -961,50 +1055,70 @@
             <h3>Responsable de service</h3>
 
             <p>
-              Coordination du service, relation client, gestion des imprévus
-              et accompagnement de l’équipe. Cette expérience m’a donné le
-              sens des responsabilités et une vraie aisance avec les utilisateurs.
+              Responsable du bon déroulement du service, de la coordination
+              de l’équipe et de la gestion des situations imprévues. Cette
+              fonction m’a appris à décider rapidement, organiser les priorités
+              et assumer la qualité du résultat collectif.
             </p>
 
             <div class="qualities">
               <div class="quality">
-                <strong>Écoute</strong>
-                <span>Comprendre et reformuler une demande</span>
+                <strong>Coordination opérationnelle</strong>
+                <span>
+                  Organiser l’activité et répartir efficacement les priorités
+                </span>
               </div>
 
               <div class="quality">
-                <strong>Priorisation</strong>
-                <span>Gérer plusieurs urgences proprement</span>
+                <strong>Gestion des situations critiques</strong>
+                <span>
+                  Réagir rapidement tout en maintenant la continuité du service
+                </span>
               </div>
 
               <div class="quality">
-                <strong>Équipe</strong>
-                <span>Transmettre les bonnes informations</span>
+                <strong>Encadrement & transmission</strong>
+                <span>
+                  Accompagner l’équipe et communiquer des consignes précises
+                </span>
               </div>
 
               <div class="quality">
-                <strong>Fiabilité</strong>
-                <span>Aller jusqu’à la résolution complète</span>
+                <strong>Exigence de résultat</strong>
+                <span>
+                  Contrôler la qualité du service et assumer les responsabilités
+                </span>
               </div>
             </div>
           </article>
 
           <article class="promise-card">
-            <p class="eyebrow">Mon engagement</p>
+            <p class="eyebrow">Mon projet professionnel</p>
 
-            <h3>Devenir rapidement utile à l’équipe</h3>
+            <h3>Construire une collaboration durable</h3>
 
             <p>
-              Je sais qu’accueillir un alternant demande du temps et de la
-              confiance. De mon côté, je m’engage à travailler sérieusement
-              pour progresser vers l’autonomie.
+              Je recherche avant tout de la stabilité et une entreprise dans
+              laquelle m’investir sur le long terme. Mon objectif ne se limite
+              pas à valider une formation : je souhaite progresser, devenir
+              autonome et poursuivre mon évolution au sein de l’équipe qui
+              m’aura formé, si la collaboration répond aux attentes de chacun.
             </p>
 
             <ul class="promise-list">
-              <li>Prendre des notes et documenter ce que j’apprends</li>
-              <li>Poser des questions précises au bon moment</li>
-              <li>Appliquer rapidement les retours de l’équipe</li>
-              <li>Rester régulier, curieux et impliqué dans les missions</li>
+              <li>M’investir pleinement dans les missions confiées</li>
+
+              <li>
+                Capitaliser sur chaque apprentissage par la documentation
+              </li>
+
+              <li>
+                Appliquer rapidement les retours et méthodes de l’équipe
+              </li>
+
+              <li>
+                Construire progressivement une autonomie durable
+              </li>
             </ul>
           </article>
         </div>
@@ -1016,12 +1130,11 @@
         <div class="section-title">
           <p class="eyebrow">Projets techniques</p>
 
-          <h2>Deux incidents reproduits et documentés</h2>
+          <h2>Des scénarios techniques documentés de bout en bout</h2>
 
           <p>
             Chaque projet suit la même méthode : ticket, diagnostic,
             correction, test de validation et compte rendu.
-            Clique sur une capture pour l’ouvrir en grand.
           </p>
         </div>
 
@@ -1046,7 +1159,9 @@
           <div class="steps">
             <div class="step">
               <span>1</span>
+
               <h4>Ticket pris en charge</h4>
+
               <p>
                 Demande catégorisée, attribuée au technicien et reliée
                 au poste ainsi qu’à l’imprimante.
@@ -1055,7 +1170,9 @@
 
             <div class="step">
               <span>2</span>
+
               <h4>Réseau vérifié</h4>
+
               <p>
                 Le PC-Accueil joint l’imprimante 192.168.0.5 avec
                 quatre réponses et 0 % de perte.
@@ -1064,7 +1181,9 @@
 
             <div class="step">
               <span>3</span>
+
               <h4>Résolution</h4>
+
               <p>
                 Tâche bloquée supprimée, service d’impression relancé
                 et page de test validée.
@@ -1149,7 +1268,9 @@
           <div class="steps">
             <div class="step">
               <span>1</span>
+
               <h4>Ticket réseau</h4>
+
               <p>
                 Le poste n’accède plus aux ressources réseau.
                 La demande est qualifiée et affectée dans GLPI.
@@ -1158,7 +1279,9 @@
 
             <div class="step">
               <span>2</span>
+
               <h4>Cause identifiée</h4>
+
               <p>
                 Le ping échoue et le contrôle du switch montre que
                 FastEthernet 0/5 est dans le VLAN 1.
@@ -1167,7 +1290,9 @@
 
             <div class="step">
               <span>3</span>
+
               <h4>Correction & test</h4>
+
               <p>
                 Fa0/5 est réaffecté au VLAN 20 — TECH.
                 Le ping vers la passerelle réussit à nouveau.
@@ -1236,16 +1361,38 @@
     <section id="contact">
       <div class="container">
         <div class="contact-box">
-          <p class="eyebrow">Recherche d’alternance</p>
+          <p class="eyebrow">Contact</p>
 
-          <h2>Prêt à apprendre et à m’investir.</h2>
+          <h2>Disponible pour rejoindre votre équipe.</h2>
 
           <p>
-            Je recherche une entreprise à Toulouse ou dans sa périphérie
-            pour préparer un BTS SIO SISR ou un Titre TSSR dès septembre 2026.
+            Je recherche dès maintenant une alternance en support informatique,
+            systèmes ou réseaux à Toulouse et dans sa périphérie, dans le cadre
+            d’un BTS SIO SISR ou d’un Titre TSSR.
           </p>
 
+          <div class="contact-details">
+            <a class="contact-detail" href="tel:+33767749553">
+              07 67 74 95 53
+            </a>
+
+            <a
+              class="contact-detail"
+              href="mailto:nemanja.filic@outlook.fr"
+            >
+              nemanja.filic@outlook.fr
+            </a>
+          </div>
+
           <div class="buttons">
+            <a
+              class="button secondary"
+              href="CV-Nemanja-Filic.pdf"
+              target="_blank"
+            >
+              Consulter mon CV
+            </a>
+
             <a
               class="button primary"
               href="https://www.linkedin.com/in/nemanjafilic"
