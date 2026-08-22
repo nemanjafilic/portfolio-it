@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nemanja Filic | Technicien support informatique junior</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #101d30;
+      --text: #edf4ff;
+      --muted: #aab8cc;
+      --blue: #47a6ff;
+      --green: #50d890;
+      --border: rgba(162, 195, 235, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 5%, rgba(71,166,255,.16), transparent 28rem),
+        radial-gradient(circle at 5% 45%, rgba(80,216,144,.08), transparent 25rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container { width: min(1100px, calc(100% - 40px)); margin: auto; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(8,17,31,.8);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .nav-content {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo { font-weight: 800; letter-spacing: .3px; }
+    .logo span { color: var(--blue); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: .92rem;
+    }
+
+    nav a:hover { color: white; }
+
+    .hero {
+      min-height: 570px;
+      display: grid;
+      align-content: center;
+      grid-template-columns: 1.45fr .9fr;
+      gap: 45px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--green);
+      border: 1px solid rgba(80,216,144,.35);
+      background: rgba(80,216,144,.08);
+      border-radius: 99px;
+      padding: 6px 12px;
+      font-size: .83rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      margin: 18px 0;
+    }
+
+    h1 em { color: var(--blue); font-style: normal; }
+
+    .intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .primary { background: var(--blue); color: #05101f; }
+    .secondary { color: white; border: 1px solid var(--border); }
+
+    .profile-card, .card {
+      border: 1px solid var(--border);
+      background: rgba(16,29,48,.78);
+      border-radius: 16px;
+    }
+
+    .profile-card { padding: 28px; align-self: center; }
+
+    .profile-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue), #7d6cff);
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .profile-card p { color: var(--muted); margin: 7px 0; }
+    .availability { color: var(--green) !important; font-weight: bold; }
+
+    section { padding: 75px 0; }
+    section:nth-of-type(even) { background: rgba(255,255,255,.018); }
+
+    .section-title { font-size: 2rem; margin: 0 0 10px; }
+    .section-text { color: var(--muted); margin: 0 0 28px; max-width: 720px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .projects { grid-template-columns: repeat(2, 1fr); }
+
+    .card { padding: 24px; }
+    .card h3 { margin: 0 0 8px; }
+    .card p { color: var(--muted); margin: 0; }
+
+    .project-number {
+      color: var(--blue);
+      font-weight: bold;
+      font-size: .85rem;
+      letter-spacing: 1px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 8px 12px;
+      border-radius: 7px;
+      color: #cde5ff;
+      background: #132946;
+      border: 1px solid rgba(71,166,255,.18);
+      font-size: .92rem;
+    }
+
+    .contact { text-align: center; }
+    .contact p { color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 720px) {
+      nav .links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 70px 0; }
+      .grid, .projects { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Nemanja <span>Filic</span></div>
+      <div class="links">
+        <a href="#apropos">Profil</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container hero">
+      <div>
+        <span class="tag">Disponible pour une alternance IT</span>
+        <h1>Technicien support<br><em>informatique junior.</em></h1>
+        <p class="intro">
+          En reconversion vers les systèmes et réseaux, je développe des projets
+          concrets autour du support utilisateur, de l’administration réseau et
+          de la résolution d’incidents.
+        </p>
+        <div class="buttons">
+          <a class="button primary" href="#projets">Voir mes projets</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/nemanjafilic" target="_blank">Mon LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="profile-icon">🖥️</div>
+        <h2>Nemanja Filic</h2>
+        <p>Technicien support informatique junior</p>
+        <p>📍 Toulouse et périphérie</p>
+        <p>🎓 BTS SIO SISR / TSSR</p>
+        <p class="availability">● Recherche d’alternance</p>
+      </aside>
+    </div>
+
+    <section id="apropos">
+      <div class="container">
+        <h2 class="section-title">Mon objectif</h2>
+        <p class="section-text">
+          Intégrer une équipe IT en alternance afin de développer mes compétences
+          en support, déploiement de postes, systèmes et réseaux. Je suis à l’aise
+          avec le diagnostic méthodique, l’accompagnement utilisateur et la
+          documentation des interventions.
+        </p>
+      </div>
+    </section>
+
+    <section id="projets">
+      <div class="container">
+        <h2 class="section-title">Projets techniques</h2>
+        <p class="section-text">
+          Des laboratoires personnels réalisés pour mettre en pratique les notions
+          de réseau, de support et de gestion d’incidents.
+        </p>
+
+        <div class="grid projects">
+          <article class="card">
+            <div class="project-number">PROJET 01</div>
+            <h3>Infrastructure réseau VLAN / DHCP</h3>
+            <p>
+              Conception d’un réseau d’agence dans Cisco Packet Tracer : routeur,
+              switch, postes de travail et imprimante. Mise en place du DHCP,
+              configuration de VLAN, port trunk et tests de connectivité.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJET 02</div>
+            <h3>Gestion d’incident avec GLPI</h3>
+            <p>
+              Déploiement d’un environnement GLPI, création d’un inventaire
+              cohérent et traitement d’un ticket “PC sans connexion réseau” :
+              qualification, diagnostic, correction, traçabilité et clôture.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="container">
+        <h2 class="section-title">Compétences</h2>
+        <p class="section-text">Compétences acquises et actuellement consolidées à travers mes laboratoires.</p>
+        <div class="skills">
+          <span class="skill">Support utilisateurs N1</span>
+          <span class="skill">Windows</span>
+          <span class="skill">Diagnostic matériel</span>
+          <span class="skill">Adressage IPv4</span>
+          <span class="skill">DHCP</span>
+          <span class="skill">DNS</span>
+          <span class="skill">VLAN</span>
+          <span class="skill">Switch & routeur Cisco</span>
+          <span class="skill">Cisco Packet Tracer</span>
+          <span class="skill">GLPI & ticketing</span>
+          <span class="skill">Documentation technique</span>
+          <span class="skill">Anglais C1</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact">
+        <h2 class="section-title">Travaillons ensemble</h2>
+        <p>Vous recrutez un alternant motivé en support informatique, systèmes ou réseaux ?</p>
+        <a class="button primary" href="https://www.linkedin.com/in/nemanjafilic" target="_blank">Me contacter sur LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Nemanja Filic — Portfolio IT
+  </footer>
+</body>
+</html>
