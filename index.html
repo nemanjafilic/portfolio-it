@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Portfolio de Nemanja Filic, candidat en support informatique, systèmes et réseaux à Toulouse."
+    content="Portfolio de Nemanja Filic, technicien support informatique junior en systèmes et réseaux à Toulouse."
   >
 
   <title>Nemanja Filic | Portfolio IT</title>
@@ -22,6 +22,8 @@
   <style>
     :root {
       --bg: #08111f;
+      --section-one: #0d1929;
+      --section-two: #081321;
       --card: #101e32;
       --card-dark: #0d192a;
       --text: #f3f7fd;
@@ -78,36 +80,35 @@
       scroll-margin-top: 75px;
     }
 
-    .section-light {
-      color: #0b1b30;
-      background: #f3f6fa;
+    .section-skills {
+      background: var(--section-one);
     }
 
-    .section-deep {
-      background: #0d1a2d;
+    .section-career {
+      background: var(--section-two);
     }
 
     .section-projects {
-      background: #07111f;
+      background: var(--section-one);
       border-top: 1px solid rgba(164, 198, 239, 0.08);
       border-bottom: 1px solid rgba(164, 198, 239, 0.08);
     }
 
     .section-contact {
-      background: #0d1a2d;
+      background: var(--section-two);
     }
 
     .eyebrow {
       margin: 0 0 8px;
       color: var(--green);
       font-size: 0.78rem;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
     .section-title {
-      max-width: 800px;
+      max-width: 780px;
       margin-bottom: 32px;
     }
 
@@ -180,8 +181,12 @@
       border-radius: 9px;
       color: var(--muted);
       font-size: 0.9rem;
-      font-weight: bold;
+      font-weight: 700;
       text-decoration: none;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -205,7 +210,7 @@
       background: #83c8ff;
     }
 
-    /* Accueil */
+    /* Présentation */
 
     .hero {
       min-height: 650px;
@@ -227,7 +232,7 @@
       color: var(--green);
       background: rgba(86, 223, 160, 0.08);
       font-size: 0.82rem;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .availability::before {
@@ -236,6 +241,7 @@
       height: 8px;
       border-radius: 50%;
       background: var(--green);
+      box-shadow: 0 0 12px rgba(86, 223, 160, 0.55);
     }
 
     h1 {
@@ -275,7 +281,7 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       font-family: "Manrope", Arial, Helvetica, sans-serif;
-      font-weight: bold;
+      font-weight: 700;
       text-decoration: none;
       transition:
         transform 0.2s ease,
@@ -294,15 +300,18 @@
       background: var(--blue);
     }
 
+    .button.primary:hover {
+      background: #83c8ff;
+    }
+
     .button.secondary {
       color: white;
       background: rgba(255, 255, 255, 0.025);
     }
 
     .hero-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px 18px;
+      display: grid;
+      gap: 10px;
       margin: 27px 0 0;
       padding: 0;
       color: #c1d0e1;
@@ -310,10 +319,28 @@
       font-size: 0.88rem;
     }
 
+    .hero-info li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
     .hero-info li::before {
-      content: "•";
-      margin-right: 7px;
+      content: "";
+      flex: 0 0 7px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .hero-info strong {
+      min-width: 68px;
       color: var(--green);
+    }
+
+    .hero-info span {
+      color: #c1d0e1;
     }
 
     .photo-card {
@@ -341,6 +368,7 @@
       border: 1px solid var(--border);
       border-radius: 13px;
       background: rgba(9, 20, 35, 0.94);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
 
     .photo-label strong,
@@ -365,6 +393,7 @@
       border: 1px solid var(--border);
       border-radius: 15px;
       background: var(--card);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       transition:
         transform 0.2s ease,
         border-color 0.2s ease,
@@ -374,19 +403,19 @@
     details.skill:hover {
       border-color: rgba(88, 179, 255, 0.45);
       transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
     }
 
     details.skill[open] {
-      border-color: rgba(88, 179, 255, 0.55);
+      border-color: rgba(88, 179, 255, 0.6);
     }
 
     details.skill summary {
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      min-height: 82px;
       padding: 17px;
       cursor: pointer;
       list-style: none;
@@ -402,6 +431,7 @@
     }
 
     .skill-name strong {
+      color: var(--text);
       line-height: 1.3;
     }
 
@@ -414,7 +444,7 @@
     .plus {
       color: var(--blue);
       font-size: 1.35rem;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .skill-description {
@@ -426,37 +456,6 @@
 
     .skill-description strong {
       color: #dcecff;
-    }
-
-    .section-light .eyebrow {
-      color: #087ac4;
-    }
-
-    .section-light .section-title p {
-      color: #5f6f83;
-    }
-
-    .section-light details.skill {
-      border-color: #d5dde8;
-      background: white;
-      box-shadow: 0 8px 24px rgba(25, 55, 90, 0.05);
-    }
-
-    .section-light details.skill[open] {
-      border-color: #58b3ff;
-    }
-
-    .section-light .skill-name strong {
-      color: #10233c;
-    }
-
-    .section-light .skill-name span,
-    .section-light .skill-description {
-      color: #66778b;
-    }
-
-    .section-light .skill-description strong {
-      color: #17334f;
     }
 
     /* Parcours */
@@ -479,7 +478,7 @@
     .career-date {
       color: var(--blue);
       font-size: 0.78rem;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -524,11 +523,12 @@
 
     .promise-card {
       border-color: rgba(86, 223, 160, 0.25);
-      background: linear-gradient(
-        145deg,
-        rgba(86, 223, 160, 0.075),
-        var(--card)
-      );
+      background:
+        linear-gradient(
+          145deg,
+          rgba(86, 223, 160, 0.075),
+          var(--card)
+        );
     }
 
     .promise-list {
@@ -546,7 +546,7 @@
       content: "✓";
       margin-right: 9px;
       color: var(--green);
-      font-weight: bold;
+      font-weight: 700;
     }
 
     /* Projets */
@@ -571,7 +571,7 @@
     .project-number {
       color: var(--blue);
       font-size: 0.77rem;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -596,7 +596,7 @@
       color: #cfe8ff;
       background: rgba(88, 179, 255, 0.07);
       font-size: 0.75rem;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .steps {
@@ -623,7 +623,7 @@
       color: #06111f;
       background: var(--blue);
       font-size: 0.75rem;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .step h4 {
@@ -686,7 +686,7 @@
       padding: 12px 13px 13px;
       color: #deecfb;
       font-size: 0.86rem;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .caption small {
@@ -694,7 +694,7 @@
       margin-top: 3px;
       color: var(--muted);
       font-size: 0.75rem;
-      font-weight: normal;
+      font-weight: 400;
     }
 
     /* Contact */
@@ -705,6 +705,7 @@
       border-radius: 24px;
       background: linear-gradient(135deg, #132c49, #0b192b);
       text-align: center;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
     }
 
     .contact-box h2 {
@@ -718,6 +719,10 @@
       max-width: 720px;
       margin: 0 auto;
       color: var(--muted);
+    }
+
+    .contact-box .buttons {
+      justify-content: center;
     }
 
     .contact-details {
@@ -739,15 +744,16 @@
       font-size: 0.9rem;
       font-weight: 600;
       text-decoration: none;
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .contact-detail:hover {
       border-color: rgba(88, 179, 255, 0.65);
       color: var(--blue);
-    }
-
-    .contact-box .buttons {
-      justify-content: center;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -756,9 +762,10 @@
       color: var(--muted);
       text-align: center;
       font-size: 0.85rem;
+      background: var(--bg);
     }
 
-    /* Tablette */
+    /* Tablettes */
 
     @media (max-width: 850px) {
       .hero {
@@ -783,7 +790,7 @@
       }
     }
 
-    /* Mobile */
+    /* Téléphones */
 
     @media (max-width: 650px) {
       .container {
@@ -823,6 +830,25 @@
         letter-spacing: -2px;
       }
 
+      .hero-info li {
+        display: grid;
+        grid-template-columns: 7px 1fr;
+        gap: 2px 10px;
+        align-items: center;
+      }
+
+      .hero-info li::before {
+        grid-row: 1 / 3;
+      }
+
+      .hero-info strong {
+        min-width: 0;
+      }
+
+      .hero-info span {
+        grid-column: 2;
+      }
+
       .skills-grid,
       .qualities,
       .gallery {
@@ -857,13 +883,12 @@
           class="cv-link"
           href="CV-Nemanja-Filic.pdf"
           target="_blank"
+          rel="noopener noreferrer"
         >
           CV
         </a>
 
-        <a class="contact-link" href="#contact">
-          Contact
-        </a>
+        <a class="contact-link" href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -871,9 +896,7 @@
   <main>
     <header class="container hero" id="accueil">
       <div>
-        <span class="availability">
-          Disponible immédiatement
-        </span>
+        <span class="availability">Disponible immédiatement</span>
 
         <h1>
           Support informatique,<br>
@@ -881,11 +904,11 @@
         </h1>
 
         <p class="hero-text">
-          Je suis <strong>Nemanja Filic</strong>, en reconversion vers les
-          métiers du support informatique, des systèmes et réseaux.
-          Je développe des laboratoires concrets pour apprendre à qualifier
-          une demande, diagnostiquer sa cause, corriger l’incident, tester
-          puis documenter la solution.
+          Je suis <strong>Nemanja Filic</strong>, en reconversion vers les métiers
+          du support informatique, des systèmes et réseaux. Je développe des
+          laboratoires concrets pour apprendre à qualifier une demande,
+          diagnostiquer sa cause, corriger l’incident, tester puis documenter
+          la solution.
         </p>
 
         <div class="buttons">
@@ -897,6 +920,7 @@
             class="button secondary"
             href="CV-Nemanja-Filic.pdf"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Consulter mon CV
           </a>
@@ -904,16 +928,21 @@
 
         <ul class="hero-info">
           <li>
-            Toulouse · Permis A/B · Véhiculé · Français · Serbe · Anglais C1
+            <strong>Mobilité</strong>
+            <span>Toulouse et périphérie · Permis A/B · Véhiculé</span>
+          </li>
+
+          <li>
+            <strong>Langues</strong>
+            <span>
+              Français : langue maternelle · Serbe : courant · Anglais : C1
+            </span>
           </li>
         </ul>
       </div>
 
       <aside class="photo-card">
-        <img
-          src="unnamed.png"
-          alt="Portrait de Nemanja Filic"
-        >
+        <img src="unnamed.png" alt="Portrait de Nemanja Filic">
 
         <div class="photo-label">
           <strong>Technicien support junior</strong>
@@ -922,20 +951,16 @@
       </aside>
     </header>
 
-    <section class="section-light" id="competences">
+    <section class="section-skills" id="competences">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">
-            Compétences techniques
-          </p>
+          <p class="eyebrow">Compétences techniques</p>
 
-          <h2>
-            Compétences mises en pratique
-          </h2>
+          <h2>Compétences mises en pratique</h2>
 
           <p>
-            Compétences de niveau junior développées à travers mes
-            laboratoires GLPI et Cisco Packet Tracer.
+            Compétences de niveau junior développées à travers mes laboratoires
+            GLPI et Cisco Packet Tracer.
           </p>
         </div>
 
@@ -951,10 +976,9 @@
             </summary>
 
             <p class="skill-description">
-              <strong>Pratiqué avec deux incidents :</strong>
-              une panne d’impression et une perte de connexion réseau.
-              Analyse du symptôme, vérifications, correction,
-              test final et compte rendu.
+              <strong>Pratiqué avec deux incidents :</strong> une panne
+              d’impression et une perte de connexion réseau. Analyse du
+              symptôme, vérifications, correction, test final et compte rendu.
             </p>
           </details>
 
@@ -969,9 +993,9 @@
             </summary>
 
             <p class="skill-description">
-              Création des utilisateurs et équipements, catégories,
-              priorité, attribution au technicien, association du matériel,
-              suivi et clôture avec une solution documentée.
+              Création des utilisateurs et équipements, catégories, priorité,
+              attribution au technicien, association du matériel, suivi et
+              clôture avec une solution documentée.
             </p>
           </details>
 
@@ -987,8 +1011,7 @@
 
             <p class="skill-description">
               Configuration d’adresses statiques, compréhension d’un réseau
-              /24, définition de la passerelle et tests de connectivité
-              par ping.
+              /24, définition de la passerelle et tests de connectivité par ping.
             </p>
           </details>
 
@@ -1003,9 +1026,9 @@
             </summary>
 
             <p class="skill-description">
-              Pool DHCP configuré sur routeur Cisco avec plage,
-              exclusions et passerelle par défaut. Le DNS est compris
-              dans son principe et reste en cours de consolidation.
+              Pool DHCP configuré sur routeur Cisco avec plage, exclusions et
+              passerelle par défaut. Le DNS est compris dans son principe et
+              reste en cours de consolidation.
             </p>
           </details>
 
@@ -1020,9 +1043,9 @@
             </summary>
 
             <p class="skill-description">
-              Création du VLAN TECH, affectation des ports du switch
-              et diagnostic d’un poste placé dans le mauvais VLAN
-              avec vérification en ligne de commande.
+              Création du VLAN TECH, affectation des ports du switch et
+              diagnostic d’un poste placé dans le mauvais VLAN avec
+              vérification en ligne de commande.
             </p>
           </details>
 
@@ -1037,9 +1060,9 @@
             </summary>
 
             <p class="skill-description">
-              Réseau construit avec postes, imprimante, switch 2960
-              et routeur 2911 : adressage, DHCP, VLAN, commandes CLI,
-              pings et simulation de pannes.
+              Réseau construit avec postes, imprimante, switch 2960 et routeur
+              2911 : adressage, DHCP, VLAN, commandes CLI, pings et simulation
+              de pannes.
             </p>
           </details>
 
@@ -1054,9 +1077,8 @@
             </summary>
 
             <p class="skill-description">
-              Utilisation et paramétrage Windows, identification des
-              composants, installation d’outils et diagnostic matériel
-              de premier niveau.
+              Utilisation et paramétrage Windows, identification des composants,
+              installation d’outils et diagnostic matériel de premier niveau.
             </p>
           </details>
 
@@ -1071,9 +1093,9 @@
             </summary>
 
             <p class="skill-description">
-              Description du symptôme, étapes de diagnostic,
-              correction appliquée, résultat des tests et rédaction
-              d’un compte rendu compréhensible.
+              Description du symptôme, étapes de diagnostic, correction
+              appliquée, résultat des tests et rédaction d’un compte rendu
+              compréhensible.
             </p>
           </details>
 
@@ -1088,50 +1110,42 @@
             </summary>
 
             <p class="skill-description">
-              Reformulation d’une demande, explication d’une solution
-              sans jargon et adaptation du discours au niveau technique
-              de l’interlocuteur.
+              Reformulation d’une demande, explication d’une solution sans
+              jargon et adaptation du discours au niveau technique de
+              l’interlocuteur.
             </p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="section-deep" id="parcours">
+    <section class="section-career" id="parcours">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">
-            Parcours professionnel
-          </p>
+          <p class="eyebrow">Parcours professionnel</p>
 
-          <h2>
-            Une expérience directement utile au support informatique
-          </h2>
+          <h2>Une expérience opérationnelle transférable à l’IT</h2>
 
           <p>
-            Plusieurs années au contact direct des clients m’ont appris
-            à comprendre une demande, gérer plusieurs priorités et
-            apporter une réponse claire dans un environnement exigeant.
-            Des acquis directement applicables au support informatique.
+            Plusieurs années au contact direct des clients m’ont appris à
+            comprendre une demande, gérer plusieurs priorités et apporter une
+            réponse claire dans un environnement exigeant. Des acquis
+            directement applicables au support informatique.
           </p>
         </div>
 
         <div class="career-grid">
           <article class="career-card">
-            <span class="career-date">
-              2018 — 2025
-            </span>
+            <span class="career-date">2018 — 2025</span>
 
-            <h3>
-              Responsable de service
-            </h3>
+            <h3>Responsable de service</h3>
 
             <p>
-              Point de contact privilégié des clients, j’ai appris à
-              identifier rapidement un besoin, reformuler une demande
-              et rechercher une solution adaptée tout en gérant les
-              priorités. Cette expérience m’a également donné le sens
-              du service, de la constance et de l’engagement.
+              Point de contact privilégié des clients, j’ai appris à identifier
+              rapidement un besoin, reformuler une demande et rechercher une
+              solution adaptée tout en gérant les priorités. Cette expérience
+              m’a également donné le sens du service, de la constance et de
+              l’engagement.
             </p>
 
             <div class="qualities">
@@ -1139,8 +1153,8 @@
                 <strong>Relation utilisateur</strong>
 
                 <span>
-                  Comprendre une demande, reformuler le besoin
-                  et communiquer avec clarté
+                  Comprendre une demande, reformuler le besoin et communiquer
+                  avec clarté
                 </span>
               </div>
 
@@ -1148,8 +1162,8 @@
                 <strong>Gestion des priorités</strong>
 
                 <span>
-                  Évaluer l’urgence, organiser les actions
-                  et assurer un suivi rigoureux
+                  Évaluer l’urgence, organiser les actions et assurer un suivi
+                  rigoureux
                 </span>
               </div>
 
@@ -1157,8 +1171,8 @@
                 <strong>Résolution d’imprévus</strong>
 
                 <span>
-                  Garder son calme, analyser la situation
-                  et rechercher une solution efficace
+                  Garder son calme, analyser la situation et rechercher une
+                  solution efficace
                 </span>
               </div>
 
@@ -1166,47 +1180,40 @@
                 <strong>Engagement durable</strong>
 
                 <span>
-                  S’investir avec constance et construire
-                  une relation de confiance dans le temps
+                  M’investir avec constance et construire une relation de
+                  confiance dans le temps
                 </span>
               </div>
             </div>
           </article>
 
           <article class="promise-card">
-            <p class="eyebrow">
-              Mon projet professionnel
-            </p>
+            <p class="eyebrow">Mon projet professionnel</p>
 
-            <h3>
-              Construire une collaboration durable
-            </h3>
+            <h3>Construire une collaboration durable</h3>
 
             <p>
-              Je recherche avant tout de la stabilité et une entreprise
-              dans laquelle m’investir sur le long terme.
-            </p>
-
-            <p>
-              Je suis pleinement conscient que l’accueil et la formation
-              d’un alternant représentent un véritable investissement
-              en temps, en transmission et en confiance pour l’équipe.
-              C’est précisément pour cette raison que mon objectif
-              ne se limite pas à valider une formation.
+              Je recherche avant tout de la stabilité et une entreprise dans
+              laquelle m’investir sur le long terme. Je suis pleinement
+              conscient que l’accueil et la formation d’un alternant
+              représentent un véritable investissement en temps, en
+              transmission et en confiance pour l’équipe.
             </p>
 
             <p>
-              Je souhaite m’impliquer à 100 %, progresser vers une réelle
-              autonomie et transformer cet investissement en compétences
-              utiles à l’entreprise. Si les attentes sont partagées,
-              mon souhait est de poursuivre mon évolution au sein de
-              l’équipe qui m’aura formé après la formation.
+              C’est précisément pour cette raison que mon objectif ne se limite
+              pas à valider une formation : je souhaite m’impliquer à 100 %,
+              progresser vers une réelle autonomie et transformer cet
+              investissement en compétences utiles à l’entreprise.
+            </p>
+
+            <p>
+              Si les attentes sont partagées, je souhaite poursuivre mon
+              évolution au sein de l’équipe qui m’aura formé après la formation.
             </p>
 
             <ul class="promise-list">
-              <li>
-                M’investir pleinement dans les missions confiées
-              </li>
+              <li>M’investir pleinement dans les missions confiées</li>
 
               <li>
                 Capitaliser sur chaque apprentissage par la documentation
@@ -1228,13 +1235,9 @@
     <section class="section-projects" id="projets">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">
-            Projets techniques
-          </p>
+          <p class="eyebrow">Projets techniques</p>
 
-          <h2>
-            Des scénarios techniques documentés de bout en bout
-          </h2>
+          <h2>Des scénarios techniques documentés de bout en bout</h2>
 
           <p>
             Chaque projet suit la même méthode : ticket, diagnostic,
@@ -1249,66 +1252,55 @@
                 Projet 01 · Support / Impression
               </div>
 
-              <h3>
-                Incident d’impression au poste d’accueil
-              </h3>
+              <h3>Incident d’impression au poste d’accueil</h3>
 
               <p class="project-subtitle">
-                Vérification du réseau puis résolution d’une tâche
-                bloquée dans la file d’impression.
+                Vérification du réseau puis résolution d’une tâche bloquée dans
+                la file d’impression.
               </p>
             </div>
 
-            <span class="tag">
-              GLPI · Support N1
-            </span>
+            <span class="tag">GLPI · Support N1</span>
           </div>
 
           <div class="steps">
             <div class="step">
               <span>1</span>
 
-              <h4>
-                Ticket pris en charge
-              </h4>
+              <h4>Ticket pris en charge</h4>
 
               <p>
-                Demande catégorisée, attribuée au technicien et
-                reliée au poste ainsi qu’à l’imprimante.
+                Demande catégorisée, attribuée au technicien et reliée au poste
+                ainsi qu’à l’imprimante.
               </p>
             </div>
 
             <div class="step">
               <span>2</span>
 
-              <h4>
-                Réseau vérifié
-              </h4>
+              <h4>Réseau vérifié</h4>
 
               <p>
-                Le PC-Accueil joint l’imprimante 192.168.0.5 avec
-                quatre réponses et 0 % de perte.
+                Le PC-Accueil joint l’imprimante 192.168.0.5 avec quatre
+                réponses et 0 % de perte.
               </p>
             </div>
 
             <div class="step">
               <span>3</span>
 
-              <h4>
-                Résolution
-              </h4>
+              <h4>Résolution</h4>
 
               <p>
-                Tâche bloquée supprimée, service d’impression relancé
-                et page de test validée.
+                Tâche bloquée supprimée, service d’impression relancé et page
+                de test validée.
               </p>
             </div>
           </div>
 
           <div class="result">
-            <strong>Résultat :</strong>
-            l’impression est rétablie et la résolution est documentée
-            dans GLPI.
+            <strong>Résultat :</strong> l’impression est rétablie et la
+            résolution est documentée dans GLPI.
           </div>
 
           <div class="gallery">
@@ -1316,6 +1308,7 @@
               class="evidence"
               href="glpi-imprimante-ticket.png"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src="glpi-imprimante-ticket.png"
@@ -1324,10 +1317,7 @@
 
               <span class="caption">
                 Ticket pris en charge
-
-                <small>
-                  Demande et équipements associés
-                </small>
+                <small>Demande et équipements associés</small>
               </span>
             </a>
 
@@ -1335,6 +1325,7 @@
               class="evidence"
               href="packet-tracer-imprimante-connectivite.png"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src="packet-tracer-imprimante-connectivite.png"
@@ -1343,10 +1334,7 @@
 
               <span class="caption">
                 Connectivité validée
-
-                <small>
-                  Ping vers l’imprimante : 0 % de perte
-                </small>
+                <small>Ping vers l’imprimante : 0 % de perte</small>
               </span>
             </a>
 
@@ -1354,6 +1342,7 @@
               class="evidence"
               href="glpi-imprimante-resolution.png"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src="glpi-imprimante-resolution.png"
@@ -1362,10 +1351,7 @@
 
               <span class="caption">
                 Incident résolu
-
-                <small>
-                  File débloquée, service relancé, test OK
-                </small>
+                <small>File débloquée, service relancé, test validé</small>
               </span>
             </a>
           </div>
@@ -1378,41 +1364,33 @@
                 Projet 02 · Réseau / VLAN
               </div>
 
-              <h3>
-                PC-Tech-02 sans connexion réseau
-              </h3>
+              <h3>PC-Tech-02 sans connexion réseau</h3>
 
               <p class="project-subtitle">
-                Diagnostic d’un port de switch affecté au mauvais VLAN
-                et rétablissement de la connectivité.
+                Diagnostic d’un port de switch affecté au mauvais VLAN et
+                rétablissement de la connectivité.
               </p>
             </div>
 
-            <span class="tag">
-              Cisco · VLAN
-            </span>
+            <span class="tag">Cisco · VLAN</span>
           </div>
 
           <div class="steps">
             <div class="step">
               <span>1</span>
 
-              <h4>
-                Ticket réseau
-              </h4>
+              <h4>Ticket réseau</h4>
 
               <p>
-                Le poste n’accède plus aux ressources réseau.
-                La demande est qualifiée et affectée dans GLPI.
+                Le poste n’accède plus aux ressources réseau. La demande est
+                qualifiée et affectée dans GLPI.
               </p>
             </div>
 
             <div class="step">
               <span>2</span>
 
-              <h4>
-                Cause identifiée
-              </h4>
+              <h4>Cause identifiée</h4>
 
               <p>
                 Le ping échoue et le contrôle du switch montre que
@@ -1423,21 +1401,18 @@
             <div class="step">
               <span>3</span>
 
-              <h4>
-                Correction & test
-              </h4>
+              <h4>Correction & test</h4>
 
               <p>
-                Fa0/5 est réaffecté au VLAN 20 — TECH.
-                Le ping vers la passerelle réussit à nouveau.
+                Fa0/5 est réaffecté au VLAN 20 — TECH. Le ping vers la
+                passerelle réussit à nouveau.
               </p>
             </div>
           </div>
 
           <div class="result">
-            <strong>Résultat :</strong>
-            le poste retrouve son VLAN, la connectivité est restaurée
-            et le ticket est clôturé.
+            <strong>Résultat :</strong> le poste retrouve son VLAN, la
+            connectivité est restaurée et le ticket est clôturé.
           </div>
 
           <div class="gallery">
@@ -1445,6 +1420,7 @@
               class="evidence"
               href="glpi-pc-tech-02-ticket.png"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src="glpi-pc-tech-02-ticket.png"
@@ -1452,11 +1428,8 @@
               >
 
               <span class="caption">
-                Ticket & compte rendu
-
-                <small>
-                  Demande, analyse et clôture
-                </small>
+                Ticket et compte rendu
+                <small>Demande, analyse et clôture</small>
               </span>
             </a>
 
@@ -1464,6 +1437,7 @@
               class="evidence"
               href="packet-tracer-vlan-erreur.png"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src="packet-tracer-vlan-erreur.png"
@@ -1472,10 +1446,7 @@
 
               <span class="caption">
                 Erreur confirmée
-
-                <small>
-                  Fa0/5 dans le VLAN 1
-                </small>
+                <small>Fa0/5 dans le VLAN 1</small>
               </span>
             </a>
 
@@ -1483,6 +1454,7 @@
               class="evidence"
               href="packet-tracer-vlan-correction.png"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src="packet-tracer-vlan-correction.png"
@@ -1491,10 +1463,7 @@
 
               <span class="caption">
                 Correction validée
-
-                <small>
-                  Fa0/5 dans VLAN 20 et ping réussi
-                </small>
+                <small>Fa0/5 dans le VLAN 20 et ping réussi</small>
               </span>
             </a>
           </div>
@@ -1505,26 +1474,18 @@
     <section class="section-contact" id="contact">
       <div class="container">
         <div class="contact-box">
-          <p class="eyebrow">
-            Contact
-          </p>
+          <p class="eyebrow">Contact</p>
 
-          <h2>
-            Disponible pour rejoindre votre équipe.
-          </h2>
+          <h2>Disponible pour rejoindre votre équipe.</h2>
 
           <p>
-            Je recherche dès maintenant une première opportunité
-            en support informatique, systèmes ou réseaux,
-            en alternance ou sur un poste junior,
-            à Toulouse et dans sa périphérie.
+            Je recherche dès maintenant une première opportunité en support
+            informatique, systèmes ou réseaux, en alternance ou sur un poste
+            junior, à Toulouse et dans sa périphérie.
           </p>
 
           <div class="contact-details">
-            <a
-              class="contact-detail"
-              href="tel:+33767749553"
-            >
+            <a class="contact-detail" href="tel:+33767749553">
               07 67 74 95 53
             </a>
 
