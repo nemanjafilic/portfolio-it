@@ -4,221 +4,172 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio de Nemanja Filic, candidat en alternance en support informatique, systèmes et réseaux à Toulouse.">
-  <meta name="theme-color" content="#08111f">
-  <meta property="og:title" content="Nemanja Filic | Portfolio IT">
-  <meta property="og:description" content="Support informatique, systèmes et réseaux — projets GLPI et Cisco Packet Tracer.">
   <title>Nemanja Filic | Portfolio IT</title>
 
   <style>
     :root {
-      --bg: #07101d;
-      --bg-soft: #0a1627;
-      --surface: rgba(15, 29, 48, .82);
-      --surface-strong: #101f34;
-      --surface-light: #152844;
-      --text: #f4f8ff;
-      --muted: #9fb0c7;
-      --blue: #5eb4ff;
-      --blue-strong: #2696f5;
+      --bg: #08111f;
+      --card: #101e32;
+      --card-dark: #0d192a;
+      --text: #f3f7fd;
+      --muted: #a8b7ca;
+      --blue: #58b3ff;
       --green: #56dfa0;
-      --violet: #9a8cff;
-      --border: rgba(164, 198, 239, .16);
-      --border-hover: rgba(94, 180, 255, .55);
-      --shadow: 0 22px 65px rgba(0, 0, 0, .26);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --container: 1160px;
+      --border: rgba(164, 198, 239, 0.17);
+      --container: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 88px;
+      scroll-padding-top: 85px;
     }
 
     body {
       margin: 0;
       color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
       background:
-        radial-gradient(circle at 82% 4%, rgba(38, 150, 245, .18), transparent 28rem),
-        radial-gradient(circle at 8% 38%, rgba(86, 223, 160, .08), transparent 27rem),
+        radial-gradient(circle at 85% 4%, rgba(88, 179, 255, 0.15), transparent 30rem),
+        radial-gradient(circle at 5% 45%, rgba(86, 223, 160, 0.07), transparent 26rem),
         var(--bg);
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      opacity: .28;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .022) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    img {
+      max-width: 100%;
     }
 
-    a { color: inherit; }
-    img { max-width: 100%; }
-    button, summary { font: inherit; }
-
-    :focus-visible {
-      outline: 3px solid rgba(94, 180, 255, .75);
-      outline-offset: 4px;
+    a {
+      color: inherit;
     }
 
     .container {
       width: min(var(--container), calc(100% - 40px));
-      margin-inline: auto;
+      margin: auto;
+    }
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .tinted {
+      background: rgba(255, 255, 255, 0.018);
     }
 
     .eyebrow {
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       color: var(--green);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .13em;
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
-    .section-heading {
-      max-width: 750px;
-      margin-bottom: 34px;
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 32px;
     }
 
-    .section-heading h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      line-height: 1.08;
-      letter-spacing: -.045em;
+    .section-title h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
     }
 
-    .section-heading p {
-      max-width: 680px;
+    .section-title p {
       margin: 0;
       color: var(--muted);
-      font-size: 1.02rem;
     }
 
-    .skip-link {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 100;
-      padding: 10px 14px;
-      border-radius: 9px;
-      color: #05101e;
-      background: var(--blue);
-      font-weight: 800;
-      transform: translateY(-150%);
-    }
+    /* NAVIGATION */
 
-    .skip-link:focus { transform: translateY(0); }
-
-    /* Navigation */
-    .site-header {
+    nav {
       position: sticky;
       top: 0;
-      z-index: 50;
-      border-bottom: 1px solid transparent;
-      background: rgba(7, 16, 29, .76);
-      backdrop-filter: blur(16px);
-      transition: border-color .2s, background .2s;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 17, 31, 0.94);
+      backdrop-filter: blur(12px);
     }
 
-    .site-header.scrolled {
-      border-color: var(--border);
-      background: rgba(7, 16, 29, .93);
-    }
-
-    .nav {
-      min-height: 74px;
+    .nav-content {
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
     }
 
-    .brand {
-      display: inline-flex;
+    .logo {
+      display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 10px;
+      color: white;
+      font-weight: 800;
       text-decoration: none;
-      font-weight: 850;
-      letter-spacing: -.02em;
     }
 
-    .brand-mark {
+    .logo-mark {
       display: grid;
       place-items: center;
-      width: 36px;
-      height: 36px;
+      width: 37px;
+      height: 37px;
       border-radius: 11px;
-      color: #07101d;
+      color: #06111f;
       background: linear-gradient(135deg, var(--blue), var(--green));
-      box-shadow: 0 8px 26px rgba(38, 150, 245, .2);
-      font-size: .85rem;
-      font-weight: 900;
+      font-size: 0.82rem;
     }
 
-    .brand span:last-child span { color: var(--blue); }
+    .logo span span {
+      color: var(--blue);
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
     }
 
     .nav-links a {
-      padding: 9px 12px;
+      padding: 9px 11px;
       border-radius: 9px;
       color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: bold;
       text-decoration: none;
-      font-size: .91rem;
-      font-weight: 650;
-      transition: color .2s, background .2s;
     }
 
     .nav-links a:hover {
       color: white;
-      background: rgba(255, 255, 255, .045);
+      background: rgba(255, 255, 255, 0.05);
     }
 
-    .nav-links .nav-cta {
-      margin-left: 8px;
-      color: #07101d;
+    .nav-links .contact-link {
+      margin-left: 5px;
+      color: #06111f;
       background: var(--blue);
     }
 
-    .nav-links .nav-cta:hover {
-      color: #07101d;
-      background: #84c7ff;
+    .nav-links .contact-link:hover {
+      color: #06111f;
+      background: #83c8ff;
     }
 
-    .menu-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      color: var(--text);
-      background: var(--surface);
-      cursor: pointer;
-    }
+    /* ACCUEIL */
 
-    /* Hero */
     .hero {
-      min-height: calc(100vh - 74px);
-      min-height: calc(100svh - 74px);
+      min-height: 650px;
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(310px, .75fr);
+      grid-template-columns: 1.35fr 0.65fr;
       align-items: center;
-      gap: clamp(45px, 7vw, 90px);
-      padding-block: 72px;
+      gap: 65px;
+      padding-top: 65px;
+      padding-bottom: 75px;
     }
 
     .availability {
@@ -226,12 +177,12 @@
       align-items: center;
       gap: 9px;
       padding: 7px 12px;
-      border: 1px solid rgba(86, 223, 160, .3);
+      border: 1px solid rgba(86, 223, 160, 0.32);
       border-radius: 999px;
       color: var(--green);
-      background: rgba(86, 223, 160, .075);
-      font-size: .83rem;
-      font-weight: 750;
+      background: rgba(86, 223, 160, 0.08);
+      font-size: 0.82rem;
+      font-weight: bold;
     }
 
     .availability::before {
@@ -240,536 +191,368 @@
       height: 8px;
       border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 0 6px rgba(86, 223, 160, .1);
     }
 
     h1 {
-      max-width: 850px;
-      margin: 22px 0 20px;
-      font-size: clamp(3rem, 6.5vw, 5.7rem);
-      line-height: .98;
-      letter-spacing: -.065em;
+      margin: 20px 0;
+      font-size: clamp(3rem, 6vw, 5.2rem);
+      line-height: 1;
+      letter-spacing: -3px;
     }
 
     h1 span {
-      color: transparent;
-      background: linear-gradient(90deg, var(--blue), #93ccff 54%, var(--green));
-      background-clip: text;
-      -webkit-background-clip: text;
+      color: var(--blue);
     }
 
-    .hero-copy {
+    .hero-text {
       max-width: 690px;
       margin: 0;
       color: var(--muted);
-      font-size: clamp(1rem, 1.8vw, 1.16rem);
+      font-size: 1.08rem;
     }
 
-    .hero-copy strong { color: #dcecff; }
+    .hero-text strong {
+      color: #dfeeff;
+    }
 
-    .hero-actions {
+    .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 29px;
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 11px 18px;
-      border: 1px solid transparent;
-      border-radius: 12px;
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-weight: bold;
       text-decoration: none;
-      font-size: .94rem;
-      font-weight: 780;
-      transition: transform .2s, border-color .2s, background .2s;
     }
 
-    .button:hover { transform: translateY(-2px); }
-
-    .button-primary {
+    .button.primary {
+      border-color: var(--blue);
       color: #06111f;
-      background: linear-gradient(135deg, var(--blue), #82c8ff);
-      box-shadow: 0 14px 34px rgba(38, 150, 245, .18);
-    }
-
-    .button-secondary {
-      border-color: var(--border);
-      color: var(--text);
-      background: rgba(255, 255, 255, .025);
-    }
-
-    .button-secondary:hover {
-      border-color: var(--border-hover);
-      background: rgba(94, 180, 255, .07);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 20px;
-      margin: 30px 0 0;
-      padding: 0;
-      color: #bfd0e4;
-      list-style: none;
-      font-size: .9rem;
-    }
-
-    .hero-meta li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-meta li::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
       background: var(--blue);
     }
 
-    .portrait-card {
+    .button.secondary {
+      color: white;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .hero-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 18px;
+      margin: 27px 0 0;
+      padding: 0;
+      color: #c1d0e1;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .hero-info li::before {
+      content: "•";
+      margin-right: 7px;
+      color: var(--green);
+    }
+
+    .photo-card {
       position: relative;
-      width: min(100%, 390px);
+      width: min(100%, 340px);
       justify-self: end;
     }
 
-    .portrait-card::before {
-      content: "";
-      position: absolute;
-      inset: 12% -8% -7% 13%;
-      z-index: -1;
-      border-radius: 42px;
-      background: linear-gradient(145deg, rgba(38, 150, 245, .38), rgba(86, 223, 160, .16));
-      filter: blur(25px);
-    }
-
-    .portrait-frame {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      border: 1px solid rgba(168, 205, 250, .22);
-      border-radius: 32px;
-      background:
-        radial-gradient(circle at 60% 20%, rgba(94, 180, 255, .28), transparent 34%),
-        linear-gradient(150deg, #142b49, #0b1728 70%);
-      box-shadow: var(--shadow);
-    }
-
-    .portrait-fallback {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: rgba(255, 255, 255, .18);
-      font-size: clamp(5rem, 14vw, 9rem);
-      font-weight: 900;
-    }
-
-    .portrait-frame img {
-      position: relative;
-      z-index: 1;
+    .photo-card img {
       display: block;
       width: 100%;
-      height: 100%;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: center top;
+      border: 1px solid rgba(164, 198, 239, 0.25);
+      border-radius: 25px;
+      background: var(--card);
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.35);
     }
 
-    .portrait-label {
+    .photo-label {
       position: absolute;
-      right: -20px;
-      bottom: 28px;
-      z-index: 2;
-      width: min(255px, 82%);
-      padding: 16px 17px;
-      border: 1px solid rgba(168, 205, 250, .2);
-      border-radius: 15px;
-      background: rgba(10, 22, 39, .9);
-      box-shadow: 0 18px 38px rgba(0, 0, 0, .3);
-      backdrop-filter: blur(12px);
-    }
-
-    .portrait-label strong,
-    .portrait-label span { display: block; }
-    .portrait-label strong { font-size: .95rem; }
-    .portrait-label span { color: var(--muted); font-size: .82rem; }
-
-    /* Sections */
-    section { padding-block: 96px; }
-    .section-soft { background: rgba(255, 255, 255, .018); }
-
-    /* Skills */
-    .skills-intro {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .skills-summary,
-    .learning-card {
-      padding: 28px;
+      right: -18px;
+      bottom: 22px;
+      padding: 14px 16px;
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--surface);
+      border-radius: 13px;
+      background: rgba(9, 20, 35, 0.94);
     }
 
-    .skills-summary h3,
-    .learning-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.32rem;
-      letter-spacing: -.025em;
+    .photo-label strong,
+    .photo-label span {
+      display: block;
     }
 
-    .skills-summary p,
-    .learning-card p {
-      margin: 0;
+    .photo-label span {
       color: var(--muted);
+      font-size: 0.78rem;
     }
 
-    .learning-list {
-      display: grid;
-      gap: 10px;
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-    }
+    /* COMPÉTENCES */
 
-    .learning-list li {
-      display: flex;
-      gap: 10px;
-      color: #dbe8f7;
-      font-size: .93rem;
-    }
-
-    .learning-list li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 900;
+    .skill-note {
+      margin-bottom: 22px;
+      padding: 19px 21px;
+      border-left: 4px solid var(--blue);
+      border-radius: 11px;
+      color: #c8d8e9;
+      background: rgba(88, 179, 255, 0.07);
     }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
 
-    .skill-card {
+    details.skill {
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: rgba(14, 29, 49, .72);
-      transition: border-color .2s, transform .2s, background .2s;
+      border-radius: 15px;
+      background: var(--card);
     }
 
-    .skill-card:hover {
-      border-color: var(--border-hover);
-      background: rgba(18, 39, 65, .82);
-      transform: translateY(-2px);
+    details.skill[open] {
+      border-color: rgba(88, 179, 255, 0.55);
     }
 
-    .skill-card[open] {
-      border-color: rgba(94, 180, 255, .4);
-      background: var(--surface-strong);
-    }
-
-    .skill-card summary {
-      position: relative;
-      display: grid;
-      grid-template-columns: 42px minmax(0, 1fr) 26px;
+    details.skill summary {
+      display: flex;
       align-items: center;
-      gap: 12px;
-      min-height: 84px;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 82px;
       padding: 17px;
       cursor: pointer;
       list-style: none;
     }
 
-    .skill-card summary::-webkit-details-marker { display: none; }
-
-    .skill-icon {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      color: var(--blue);
-      background: rgba(94, 180, 255, .09);
-      font-size: .78rem;
-      font-weight: 900;
-      letter-spacing: .04em;
+    details.skill summary::-webkit-details-marker {
+      display: none;
     }
 
-    .skill-title strong,
-    .skill-title span { display: block; }
-    .skill-title strong { line-height: 1.3; }
-    .skill-title span {
+    .skill-name strong,
+    .skill-name span {
+      display: block;
+    }
+
+    .skill-name strong {
+      line-height: 1.3;
+    }
+
+    .skill-name span {
       margin-top: 3px;
       color: var(--muted);
-      font-size: .76rem;
+      font-size: 0.76rem;
     }
 
-    .skill-chevron {
-      color: var(--muted);
-      font-size: 1.25rem;
-      transition: transform .2s, color .2s;
-    }
-
-    .skill-card[open] .skill-chevron {
+    .plus {
       color: var(--blue);
-      transform: rotate(45deg);
+      font-size: 1.35rem;
+      font-weight: bold;
     }
 
-    .skill-detail {
+    .skill-description {
       margin: 0;
-      padding: 0 18px 18px 72px;
+      padding: 0 17px 18px;
       color: var(--muted);
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
 
-    .skill-detail strong { color: #dcecff; }
+    .skill-description strong {
+      color: #dcecff;
+    }
 
-    /* Experience */
-    .experience-layout {
+    /* PARCOURS */
+
+    .career-grid {
       display: grid;
-      grid-template-columns: .78fr 1.22fr;
-      gap: 22px;
-      align-items: stretch;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
     }
 
-    .experience-story,
-    .transfer-card {
+    .career-card,
+    .promise-card {
+      padding: 28px;
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--surface);
+      border-radius: 20px;
+      background: var(--card);
     }
 
-    .experience-story { padding: 31px; }
-
-    .experience-story .date {
+    .career-date {
       color: var(--blue);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .1em;
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .experience-story h3 {
-      margin: 10px 0 3px;
-      font-size: 1.55rem;
-      letter-spacing: -.03em;
+    .career-card h3,
+    .promise-card h3 {
+      margin: 9px 0 4px;
+      font-size: 1.4rem;
     }
 
-    .experience-story .company {
-      margin: 0 0 20px;
-      color: #c4d5e9;
-    }
-
-    .experience-story p:last-child {
-      margin-bottom: 0;
+    .career-card p,
+    .promise-card p {
+      margin: 10px 0 0;
       color: var(--muted);
     }
 
-    .transfer-grid {
+    .qualities {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-      background: var(--border);
+      gap: 11px;
+      margin-top: 19px;
     }
 
-    .transfer-card {
-      min-height: 190px;
-      padding: 25px;
-      border: 0;
-      border-radius: 0;
-    }
-
-    .transfer-number {
-      color: var(--green);
-      font-size: .72rem;
-      font-weight: 850;
-      letter-spacing: .1em;
-    }
-
-    .transfer-card h3 {
-      margin: 9px 0 7px;
-      font-size: 1.05rem;
-    }
-
-    .transfer-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .commitment {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 18px;
-      margin-top: 22px;
-      padding: 24px 27px;
-      border: 1px solid rgba(86, 223, 160, .25);
-      border-radius: var(--radius-md);
-      background: linear-gradient(90deg, rgba(86, 223, 160, .08), rgba(94, 180, 255, .055));
-    }
-
-    .commitment-mark {
-      display: grid;
-      place-items: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      color: #06150f;
-      background: var(--green);
-      font-weight: 900;
-    }
-
-    .commitment h3 { margin: 0 0 4px; }
-    .commitment p { margin: 0; color: var(--muted); }
-
-    /* Projects */
-    .project {
-      position: relative;
-      margin-top: 24px;
-      padding: clamp(24px, 4vw, 38px);
-      overflow: hidden;
+    .quality {
+      padding: 14px;
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(145deg, rgba(16, 32, 53, .94), rgba(9, 20, 35, .9));
-      box-shadow: 0 20px 55px rgba(0, 0, 0, .15);
+      border-radius: 11px;
+      background: var(--card-dark);
     }
 
-    .project::after {
-      content: attr(data-project);
-      position: absolute;
-      top: -20px;
-      right: 15px;
-      color: rgba(255, 255, 255, .025);
-      font-size: clamp(7rem, 18vw, 13rem);
-      font-weight: 950;
-      line-height: 1;
-      pointer-events: none;
+    .quality strong {
+      display: block;
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+
+    .quality span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .promise-card {
+      border-color: rgba(86, 223, 160, 0.25);
+      background: linear-gradient(145deg, rgba(86, 223, 160, 0.075), var(--card));
+    }
+
+    .promise-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .promise-list li {
+      margin-top: 10px;
+      color: #d5e2ef;
+    }
+
+    .promise-list li::before {
+      content: "✓";
+      margin-right: 9px;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    /* PROJETS */
+
+    .project {
+      margin-top: 24px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      background: linear-gradient(145deg, var(--card), #0a1626);
     }
 
     .project-header {
-      position: relative;
-      z-index: 1;
       display: flex;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 25px;
-      margin-bottom: 28px;
+      gap: 20px;
+      margin-bottom: 23px;
     }
 
-    .project-kicker {
-      margin-bottom: 7px;
+    .project-number {
       color: var(--blue);
-      font-size: .76rem;
-      font-weight: 850;
-      letter-spacing: .11em;
+      font-size: 0.77rem;
+      font-weight: bold;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     .project h3 {
-      margin: 0 0 8px;
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
-      line-height: 1.15;
-      letter-spacing: -.035em;
+      margin: 7px 0 6px;
+      font-size: 1.6rem;
     }
 
     .project-subtitle {
-      max-width: 700px;
+      max-width: 720px;
       margin: 0;
       color: var(--muted);
     }
 
-    .tool-tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px;
-      align-content: flex-start;
-      min-width: 185px;
-    }
-
-    .tool-tag {
+    .tag {
+      flex-shrink: 0;
       padding: 6px 10px;
-      border: 1px solid rgba(94, 180, 255, .2);
+      border: 1px solid rgba(88, 179, 255, 0.25);
       border-radius: 999px;
       color: #cfe8ff;
-      background: rgba(94, 180, 255, .06);
-      font-size: .75rem;
-      font-weight: 700;
+      background: rgba(88, 179, 255, 0.07);
+      font-size: 0.75rem;
+      font-weight: bold;
     }
 
-    .project-flow {
-      position: relative;
-      z-index: 1;
+    .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin: 0 0 18px;
+      margin-bottom: 17px;
     }
 
-    .flow-step {
-      min-height: 175px;
-      padding: 21px;
+    .step {
+      padding: 19px;
       border: 1px solid var(--border);
-      border-radius: 15px;
-      background: rgba(5, 14, 26, .38);
+      border-radius: 13px;
+      background: rgba(5, 14, 26, 0.38);
     }
 
-    .flow-step .step-number {
+    .step span {
       display: inline-grid;
       place-items: center;
       width: 27px;
       height: 27px;
-      margin-bottom: 14px;
+      margin-bottom: 11px;
       border-radius: 8px;
       color: #06111f;
       background: var(--blue);
-      font-size: .74rem;
-      font-weight: 900;
+      font-size: 0.75rem;
+      font-weight: bold;
     }
 
-    .flow-step h4 {
-      margin: 0 0 7px;
-      font-size: 1rem;
+    .step h4 {
+      margin: 0 0 6px;
     }
 
-    .flow-step p {
+    .step p {
       margin: 0;
       color: var(--muted);
-      font-size: .89rem;
+      font-size: 0.88rem;
     }
 
-    .project-result {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: flex-start;
-      gap: 13px;
-      margin: 0 0 24px;
-      padding: 16px 18px;
-      border: 1px solid rgba(86, 223, 160, .21);
-      border-radius: 13px;
-      background: rgba(86, 223, 160, .065);
-      color: #ceeadd;
-      font-size: .92rem;
+    .result {
+      margin-bottom: 20px;
+      padding: 15px 17px;
+      border-left: 4px solid var(--green);
+      border-radius: 9px;
+      color: #d5e9df;
+      background: rgba(86, 223, 160, 0.075);
     }
 
-    .result-check { color: var(--green); font-weight: 950; }
-    .project-result strong { color: var(--green); }
+    .result strong {
+      color: var(--green);
+    }
 
     .gallery {
-      position: relative;
-      z-index: 1;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 13px;
@@ -778,425 +561,707 @@
     .evidence {
       display: block;
       overflow: hidden;
-      padding: 0;
       border: 1px solid var(--border);
-      border-radius: 15px;
-      color: inherit;
-      background: #091626;
-      text-align: left;
-      cursor: zoom-in;
-      transition: transform .2s, border-color .2s, box-shadow .2s;
+      border-radius: 13px;
+      background: #091525;
+      text-decoration: none;
     }
 
     .evidence:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, .22);
-      transform: translateY(-3px);
-    }
-
-    .evidence-image {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 16 / 10;
-      border-bottom: 1px solid var(--border);
-      background: #0a1320;
+      border-color: rgba(88, 179, 255, 0.65);
     }
 
     .evidence img {
       display: block;
       width: 100%;
-      height: 100%;
+      aspect-ratio: 16 / 10;
       object-fit: cover;
       object-position: top;
-      transition: transform .28s;
-    }
-
-    .evidence:hover img { transform: scale(1.025); }
-
-    .zoom-hint {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      padding: 5px 8px;
-      border: 1px solid rgba(255, 255, 255, .14);
-      border-radius: 8px;
-      color: white;
-      background: rgba(4, 12, 22, .78);
-      font-size: .69rem;
-      font-weight: 750;
-      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
 
     .caption {
       display: block;
-      padding: 14px 15px 15px;
+      padding: 12px 13px 13px;
       color: #deecfb;
-      font-size: .88rem;
-      font-weight: 780;
+      font-size: 0.86rem;
+      font-weight: bold;
     }
 
     .caption small {
       display: block;
-      margin-top: 4px;
+      margin-top: 3px;
       color: var(--muted);
-      font-size: .76rem;
-      font-weight: 450;
-      line-height: 1.45;
+      font-size: 0.75rem;
+      font-weight: normal;
     }
 
-    /* Contact */
-    .contact-panel {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(32px, 6vw, 64px);
-      border: 1px solid rgba(94, 180, 255, .23);
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at 88% 15%, rgba(86, 223, 160, .15), transparent 18rem),
-        linear-gradient(135deg, rgba(18, 42, 70, .96), rgba(9, 22, 38, .96));
-      box-shadow: var(--shadow);
+    /* CONTACT */
+
+    .contact-box {
+      padding: 50px;
+      border: 1px solid rgba(88, 179, 255, 0.25);
+      border-radius: 24px;
+      background: linear-gradient(135deg, #132c49, #0b192b);
+      text-align: center;
     }
 
-    .contact-panel::after {
-      content: "NF";
-      position: absolute;
-      right: -25px;
-      bottom: -70px;
-      color: rgba(255, 255, 255, .025);
-      font-size: 15rem;
-      font-weight: 950;
-      line-height: 1;
-      pointer-events: none;
+    .contact-box h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
     }
 
-    .contact-panel h2 {
-      position: relative;
-      z-index: 1;
+    .contact-box p {
       max-width: 720px;
-      margin: 0 0 15px;
-      font-size: clamp(2rem, 5vw, 3.7rem);
-      line-height: 1.05;
-      letter-spacing: -.05em;
+      margin: 0 auto;
+      color: var(--muted);
     }
 
-    .contact-panel p {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0;
-      color: #b8c9dc;
+    .contact-box .buttons {
+      justify-content: center;
     }
-
-    .contact-panel .hero-actions { position: relative; z-index: 1; }
 
     footer {
-      padding: 30px 20px;
-      color: #7f91a9;
+      padding: 28px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       text-align: center;
-      font-size: .84rem;
+      font-size: 0.85rem;
     }
 
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      place-items: center;
-      padding: 28px;
-      background: rgba(2, 7, 14, .88);
-      backdrop-filter: blur(14px);
-    }
+    /* TABLETTE */
 
-    .lightbox.open { display: grid; }
-
-    .lightbox-dialog {
-      position: relative;
-      width: min(1280px, 100%);
-      max-height: calc(100vh - 56px);
-      overflow: auto;
-      border: 1px solid rgba(174, 208, 248, .25);
-      border-radius: 18px;
-      background: #07101d;
-      box-shadow: 0 30px 100px rgba(0, 0, 0, .55);
-    }
-
-    .lightbox img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .lightbox-caption {
-      padding: 14px 55px 15px 17px;
-      color: #cfe0f2;
-      font-size: .9rem;
-    }
-
-    .lightbox-close {
-      position: sticky;
-      top: 10px;
-      z-index: 2;
-      float: right;
-      width: 40px;
-      height: 40px;
-      margin: 10px 10px -50px 0;
-      border: 1px solid rgba(255, 255, 255, .18);
-      border-radius: 11px;
-      color: white;
-      background: rgba(4, 12, 22, .85);
-      cursor: pointer;
-      backdrop-filter: blur(8px);
-    }
-
-    body.modal-open { overflow: hidden; }
-
-    /* Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (max-width: 980px) {
+    @media (max-width: 850px) {
       .hero {
-        grid-template-columns: 1fr .65fr;
-        gap: 40px;
-      }
-
-      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .experience-layout { grid-template-columns: 1fr; }
-      .project-flow { grid-template-columns: 1fr; }
-      .flow-step { min-height: auto; }
-    }
-
-    @media (max-width: 760px) {
-      .container { width: min(100% - 28px, var(--container)); }
-
-      .menu-toggle {
-        display: grid;
-        place-items: center;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 14px;
-        right: 14px;
-        display: none;
-        align-items: stretch;
-        flex-direction: column;
-        padding: 10px;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        background: rgba(8, 18, 32, .98);
-        box-shadow: var(--shadow);
-      }
-
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 11px 12px; }
-      .nav-links .nav-cta { margin: 4px 0 0; text-align: center; }
-
-      .hero {
-        min-height: auto;
         grid-template-columns: 1fr;
-        padding-block: 62px 80px;
       }
 
-      h1 { max-width: 650px; }
-
-      .portrait-card {
-        width: min(88%, 390px);
+      .photo-card {
+        width: min(80%, 340px);
         justify-self: center;
       }
 
-      .portrait-label { right: -10px; }
-      section { padding-block: 75px; }
-      .skills-intro { grid-template-columns: 1fr; }
-      .gallery { grid-template-columns: 1fr; }
-      .project-header { flex-direction: column; }
-      .tool-tags { justify-content: flex-start; min-width: 0; }
-      .evidence-image { aspect-ratio: 16 / 9; }
-    }
-
-    @media (max-width: 560px) {
-      .skills-grid,
-      .transfer-grid { grid-template-columns: 1fr; }
-
-      .skill-detail { padding-left: 18px; }
-      .commitment { grid-template-columns: 1fr; }
-      .project { padding-inline: 18px; }
-      .portrait-label { right: -6px; bottom: 18px; }
-      .lightbox { padding: 10px; }
-      .lightbox-dialog { max-height: calc(100vh - 20px); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .reveal { opacity: 1; transform: none; }
+
+      .career-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .nav-content {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+      }
+
+      .nav-links .contact-link {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .skills-grid,
+      .qualities,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .project-header {
+        flex-direction: column;
+      }
+
+      .contact-box {
+        padding: 32px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
-
-  <header class="site-header" id="siteHeader">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Retour en haut de la page">
-        <span class="brand-mark">NF</span>
+  <nav>
+    <div class="container nav-content">
+      <a class="logo" href="#accueil">
+        <span class="logo-mark">NF</span>
         <span>Nemanja <span>Filic</span></span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false">☰</button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <div class="nav-links">
         <a href="#competences">Compétences</a>
         <a href="#parcours">Parcours</a>
         <a href="#projets">Projets</a>
-        <a class="nav-cta" href="#contact">Me contacter</a>
-      </nav>
+        <a class="contact-link" href="#contact">Me contacter</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main id="main">
-    <section class="container hero" id="top">
-      <div class="hero-content reveal">
+  <main>
+    <header class="container hero" id="accueil">
+      <div>
         <span class="availability">Disponible pour une alternance dès septembre 2026</span>
-        <h1>Support informatique,<br><span>systèmes & réseaux.</span></h1>
-        <p class="hero-copy">
-          Je suis <strong>Nemanja Filic</strong>, candidat en BTS SIO SISR ou Titre TSSR à Toulouse.
-          Je développe des laboratoires concrets pour apprendre à qualifier un incident,
-          diagnostiquer sa cause, rétablir le service et documenter la résolution.
+
+        <h1>
+          Support informatique,<br>
+          <span>systèmes & réseaux.</span>
+        </h1>
+
+        <p class="hero-text">
+          Je suis <strong>Nemanja Filic</strong>, en reconversion vers l’informatique
+          et candidat en BTS SIO SISR ou Titre TSSR à Toulouse. À travers mes
+          laboratoires, j’apprends à qualifier une demande, diagnostiquer sa cause,
+          corriger l’incident, tester puis documenter la solution.
         </p>
 
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projets">Découvrir mes projets <span aria-hidden="true">↓</span></a>
-          <a class="button button-secondary" href="https://www.linkedin.com/in/nemanjafilic" target="_blank" rel="noopener noreferrer">Voir mon LinkedIn <span aria-hidden="true">↗</span></a>
+        <div class="buttons">
+          <a class="button primary" href="#projets">Voir mes projets</a>
+
+          <a
+            class="button secondary"
+            href="https://www.linkedin.com/in/nemanjafilic"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Mon LinkedIn ↗
+          </a>
         </div>
 
-        <ul class="hero-meta" aria-label="Informations principales">
+        <ul class="hero-info">
           <li>Toulouse et périphérie</li>
           <li>Permis A & B — véhiculé</li>
-          <li>Français, serbe & anglais C1</li>
+          <li>Anglais C1 — serbe courant</li>
         </ul>
       </div>
 
-      <aside class="portrait-card reveal" aria-label="Portrait et objectif professionnel">
-        <div class="portrait-frame">
-          <span class="portrait-fallback" aria-hidden="true">NF</span>
-          <!-- Si ta photo porte un autre nom dans GitHub, modifie uniquement le src ci-dessous. -->
-          <img src="unnamed.png" alt="Portrait de Nemanja Filic" id="profilePhoto">
-        </div>
-        <div class="portrait-label">
+      <aside class="photo-card">
+        <img src="unnamed.png" alt="Portrait de Nemanja Filic">
+
+        <div class="photo-label">
           <strong>Technicien support junior</strong>
           <span>Support N1 · Systèmes · Réseaux</span>
         </div>
       </aside>
-    </section>
+    </header>
 
-    <section class="section-soft" id="competences">
+    <section class="tinted" id="competences">
       <div class="container">
-        <div class="section-heading reveal">
+        <div class="section-title">
           <p class="eyebrow">Compétences techniques</p>
-          <h2>Ce que je pratique déjà en laboratoire</h2>
+
+          <h2>Ce que je pratique déjà</h2>
+
           <p>
-            Je ne présente pas ces notions comme des années d’expérience : je montre précisément
-            comment je les ai travaillées. Clique sur une compétence pour voir les preuves associées.
+            Des bases acquises par la pratique dans mes laboratoires GLPI et
+            Cisco Packet Tracer. Clique sur une compétence pour voir comment
+            je l’ai travaillée.
           </p>
         </div>
 
-        <div class="skills-intro reveal">
-          <div class="skills-summary">
-            <h3>Une base orientée terrain</h3>
-            <p>
-              Mes projets relient le support utilisateur, GLPI et la simulation réseau : une demande
-              devient un diagnostic, une correction testée, puis un compte rendu exploitable.
-            </p>
-          </div>
-
-          <div class="learning-card">
-            <h3>Ma méthode d’apprentissage</h3>
-            <ul class="learning-list">
-              <li>Comprendre le rôle de chaque composant avant de configurer</li>
-              <li>Créer volontairement une panne pour apprendre à l’isoler</li>
-              <li>Tester le retour au service et documenter la solution</li>
-            </ul>
-          </div>
+        <div class="skill-note">
+          Je reste transparent : il s’agit de compétences de niveau junior
+          pratiquées en laboratoire, que je souhaite maintenant consolider
+          au contact d’une véritable équipe IT.
         </div>
 
         <div class="skills-grid">
-          <details class="skill-card reveal">
+          <details class="skill" open>
             <summary>
-              <span class="skill-icon">N1</span>
-              <span class="skill-title"><strong>Support utilisateurs N1</strong><span>Qualification & résolution</span></span>
-              <span class="skill-chevron" aria-hidden="true">+</span>
+              <span class="skill-name">
+                <strong>Support utilisateurs N1</strong>
+                <span>Qualification et résolution</span>
+              </span>
+              <span class="plus">+</span>
             </summary>
-            <p class="skill-detail">
-              <strong>Pratiqué avec deux scénarios :</strong> incident d’impression et perte de connexion réseau.
-              Recueil du symptôme, vérifications, correction, test avec l’utilisateur et clôture documentée.
+
+            <p class="skill-description">
+              <strong>Pratiqué avec deux incidents :</strong> une panne
+              d’impression et une perte de connexion réseau. Analyse du
+              symptôme, vérifications, correction, test final et compte rendu.
             </p>
           </details>
 
-          <details class="skill-card reveal">
+          <details class="skill">
             <summary>
-              <span class="skill-icon">GL</span>
-              <span class="skill-title"><strong>GLPI & ticketing</strong><span>Cycle de vie d’un ticket</span></span>
-              <span class="skill-chevron" aria-hidden="true">+</span>
+              <span class="skill-name">
+                <strong>GLPI & ticketing</strong>
+                <span>Suivi des demandes</span>
+              </span>
+              <span class="plus">+</span>
             </summary>
-            <p class="skill-detail">
-              <strong>Acquis sur mon laboratoire GLPI :</strong> création des utilisateurs et équipements,
-              catégorisation, priorité, attribution, liaison aux matériels, suivi et compte rendu de résolution.
+
+            <p class="skill-description">
+              Création des utilisateurs et équipements, catégories, priorité,
+              attribution au technicien, association du matériel, suivi et
+              clôture avec une solution documentée.
             </p>
           </details>
 
-          <details class="skill-card reveal">
+          <details class="skill">
             <summary>
-              <span class="skill-icon">IP</span>
-              <span class="skill-title"><strong>Adressage IPv4</strong><span>IP, masque & passerelle</span></span>
-              <span class="skill-chevron" aria-hidden="true">+</span>
+              <span class="skill-name">
+                <strong>Adressage IPv4</strong>
+                <span>IP, masque et passerelle</span>
+              </span>
+              <span class="plus">+</span>
             </summary>
-            <p class="skill-detail">
-              <strong>Pratiqué dans Packet Tracer :</strong> configuration d’adresses statiques,
-              lecture d’un réseau /24, définition de la passerelle et validation par des tests de ping.
+
+            <p class="skill-description">
+              Configuration d’adresses statiques, compréhension d’un réseau
+              /24, définition de la passerelle et tests de connectivité par ping.
             </p>
           </details>
 
-          <details class="skill-card reveal">
+          <details class="skill">
             <summary>
-              <span class="skill-icon">DH</span>
-              <span class="skill-title"><strong>DHCP & DNS</strong><span>Services réseau essentiels</span></span>
-              <span class="skill-chevron" aria-hidden="true">+</span>
+              <span class="skill-name">
+                <strong>DHCP & DNS</strong>
+                <span>Services réseau</span>
+              </span>
+              <span class="plus">+</span>
             </summary>
-            <p class="skill-detail">
-              <strong>DHCP configuré sur routeur Cisco :</strong> plage, exclusions et passerelle par défaut,
-              puis contrôle de l’attribution sur les postes. Notions DNS comprises et en cours de consolidation.
+
+            <p class="skill-description">
+              Pool DHCP configuré sur routeur Cisco avec plage, exclusions et
+              passerelle par défaut. Le DNS est compris dans son principe et
+              reste en cours de consolidation.
             </p>
           </details>
 
-          <details class="skill-card reveal">
+          <details class="skill">
             <summary>
-              <span class="skill-icon">VL</span>
-              <span class="skill-title"><strong>VLAN & commutation</strong><span>Segmentation logique</span></span>
-              <span class="skill-chevron" aria-hidden="true">+</span>
+              <span class="skill-name">
+                <strong>VLAN & commutation</strong>
+                <span>Segmentation du réseau</span>
+              </span>
+              <span class="plus">+</span>
             </summary>
-            <p class="skill-detail">
-              <strong>Pratiqué sur switch Cisco simulé :</strong> création du VLAN TECH, affectation de ports,
-              contrôle avec les commandes de vérification et diagnostic d’un poste placé dans le mauvais VLAN.
+
+            <p class="skill-description">
+              Création du VLAN TECH, affectation des ports du switch et
+              diagnostic d’un poste placé dans le mauvais VLAN avec
+              vérification en ligne de commande.
             </p>
           </details>
 
-          <details class="skill-card reveal">
-            </body>
+          <details class="skill">
+            <summary>
+              <span class="skill-name">
+                <strong>Cisco Packet Tracer</strong>
+                <span>Laboratoire d’agence</span>
+              </span>
+              <span class="plus">+</span>
+            </summary>
+
+            <p class="skill-description">
+              Réseau construit avec postes, imprimante, switch 2960 et routeur
+              2911 : adressage, DHCP, VLAN, commandes CLI, pings et simulation
+              de pannes.
+            </p>
+          </details>
+
+          <details class="skill">
+            <summary>
+              <span class="skill-name">
+                <strong>Windows & matériel</strong>
+                <span>Postes de travail</span>
+              </span>
+              <span class="plus">+</span>
+            </summary>
+
+            <p class="skill-description">
+              Utilisation et paramétrage Windows, identification des composants,
+              installation d’outils et diagnostic matériel de premier niveau.
+            </p>
+          </details>
+
+          <details class="skill">
+            <summary>
+              <span class="skill-name">
+                <strong>Documentation technique</strong>
+                <span>Traçabilité des actions</span>
+              </span>
+              <span class="plus">+</span>
+            </summary>
+
+            <p class="skill-description">
+              Description du symptôme, étapes de diagnostic, correction
+              appliquée, résultat des tests et rédaction d’un compte rendu
+              compréhensible.
+            </p>
+          </details>
+
+          <details class="skill">
+            <summary>
+              <span class="skill-name">
+                <strong>Anglais C1</strong>
+                <span>Documentation et échanges</span>
+              </span>
+              <span class="plus">+</span>
+            </summary>
+
+            <p class="skill-description">
+              Lecture de documentation technique en anglais et capacité à
+              communiquer avec un utilisateur ou un interlocuteur anglophone.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="parcours">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Parcours professionnel</p>
+
+          <h2>Une reconversion, pas un départ de zéro</h2>
+
+          <p>
+            Mon expérience en restauration m’a appris la relation client,
+            la gestion des priorités et la fiabilité sous pression.
+            Je transpose aujourd’hui ces acquis au support informatique.
+          </p>
+        </div>
+
+        <div class="career-grid">
+          <article class="career-card">
+            <span class="career-date">2023 — 2026</span>
+
+            <h3>Responsable de service</h3>
+
+            <p>
+              Coordination du service, relation client, gestion des imprévus
+              et accompagnement de l’équipe. Cette expérience m’a donné le
+              sens des responsabilités et une vraie aisance avec les utilisateurs.
+            </p>
+
+            <div class="qualities">
+              <div class="quality">
+                <strong>Écoute</strong>
+                <span>Comprendre et reformuler une demande</span>
+              </div>
+
+              <div class="quality">
+                <strong>Priorisation</strong>
+                <span>Gérer plusieurs urgences proprement</span>
+              </div>
+
+              <div class="quality">
+                <strong>Équipe</strong>
+                <span>Transmettre les bonnes informations</span>
+              </div>
+
+              <div class="quality">
+                <strong>Fiabilité</strong>
+                <span>Aller jusqu’à la résolution complète</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="promise-card">
+            <p class="eyebrow">Mon engagement</p>
+
+            <h3>Devenir rapidement utile à l’équipe</h3>
+
+            <p>
+              Je sais qu’accueillir un alternant demande du temps et de la
+              confiance. De mon côté, je m’engage à travailler sérieusement
+              pour progresser vers l’autonomie.
+            </p>
+
+            <ul class="promise-list">
+              <li>Prendre des notes et documenter ce que j’apprends</li>
+              <li>Poser des questions précises au bon moment</li>
+              <li>Appliquer rapidement les retours de l’équipe</li>
+              <li>Rester régulier, curieux et impliqué dans les missions</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tinted" id="projets">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Projets techniques</p>
+
+          <h2>Deux incidents reproduits et documentés</h2>
+
+          <p>
+            Chaque projet suit la même méthode : ticket, diagnostic,
+            correction, test de validation et compte rendu.
+            Clique sur une capture pour l’ouvrir en grand.
+          </p>
+        </div>
+
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <div class="project-number">
+                Projet 01 · Support / Impression
+              </div>
+
+              <h3>Incident d’impression au poste d’accueil</h3>
+
+              <p class="project-subtitle">
+                Vérification du réseau puis résolution d’une tâche bloquée
+                dans la file d’impression.
+              </p>
+            </div>
+
+            <span class="tag">GLPI · Support N1</span>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <span>1</span>
+              <h4>Ticket pris en charge</h4>
+              <p>
+                Demande catégorisée, attribuée au technicien et reliée
+                au poste ainsi qu’à l’imprimante.
+              </p>
+            </div>
+
+            <div class="step">
+              <span>2</span>
+              <h4>Réseau vérifié</h4>
+              <p>
+                Le PC-Accueil joint l’imprimante 192.168.0.5 avec
+                quatre réponses et 0 % de perte.
+              </p>
+            </div>
+
+            <div class="step">
+              <span>3</span>
+              <h4>Résolution</h4>
+              <p>
+                Tâche bloquée supprimée, service d’impression relancé
+                et page de test validée.
+              </p>
+            </div>
+          </div>
+
+          <div class="result">
+            <strong>Résultat :</strong> l’impression est rétablie et la
+            résolution est documentée dans GLPI.
+          </div>
+
+          <div class="gallery">
+            <a
+              class="evidence"
+              href="glpi-imprimante-ticket.png"
+              target="_blank"
+            >
+              <img
+                src="glpi-imprimante-ticket.png"
+                alt="Ticket GLPI imprimante attribué au technicien"
+              >
+
+              <span class="caption">
+                Ticket pris en charge
+                <small>Demande et équipements associés</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="packet-tracer-imprimante-connectivite.png"
+              target="_blank"
+            >
+              <img
+                src="packet-tracer-imprimante-connectivite.png"
+                alt="Ping réussi entre le poste et l’imprimante"
+              >
+
+              <span class="caption">
+                Connectivité validée
+                <small>Ping vers l’imprimante : 0 % de perte</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="glpi-imprimante-resolution.png"
+              target="_blank"
+            >
+              <img
+                src="glpi-imprimante-resolution.png"
+                alt="Résolution du ticket imprimante dans GLPI"
+              >
+
+              <span class="caption">
+                Incident résolu
+                <small>File débloquée, service relancé, test OK</small>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <div class="project-number">
+                Projet 02 · Réseau / VLAN
+              </div>
+
+              <h3>PC-Tech-02 sans connexion réseau</h3>
+
+              <p class="project-subtitle">
+                Diagnostic d’un port de switch affecté au mauvais VLAN
+                et rétablissement de la connectivité.
+              </p>
+            </div>
+
+            <span class="tag">Cisco · VLAN</span>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <span>1</span>
+              <h4>Ticket réseau</h4>
+              <p>
+                Le poste n’accède plus aux ressources réseau.
+                La demande est qualifiée et affectée dans GLPI.
+              </p>
+            </div>
+
+            <div class="step">
+              <span>2</span>
+              <h4>Cause identifiée</h4>
+              <p>
+                Le ping échoue et le contrôle du switch montre que
+                FastEthernet 0/5 est dans le VLAN 1.
+              </p>
+            </div>
+
+            <div class="step">
+              <span>3</span>
+              <h4>Correction & test</h4>
+              <p>
+                Fa0/5 est réaffecté au VLAN 20 — TECH.
+                Le ping vers la passerelle réussit à nouveau.
+              </p>
+            </div>
+          </div>
+
+          <div class="result">
+            <strong>Résultat :</strong> le poste retrouve son VLAN,
+            la connectivité est restaurée et le ticket est clôturé.
+          </div>
+
+          <div class="gallery">
+            <a
+              class="evidence"
+              href="glpi-pc-tech-02-ticket.png"
+              target="_blank"
+            >
+              <img
+                src="glpi-pc-tech-02-ticket.png"
+                alt="Ticket GLPI du poste PC-Tech-02 sans réseau"
+              >
+
+              <span class="caption">
+                Ticket & compte rendu
+                <small>Demande, analyse et clôture</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="packet-tracer-vlan-erreur.png"
+              target="_blank"
+            >
+              <img
+                src="packet-tracer-vlan-erreur.png"
+                alt="Erreur VLAN et ping échoué dans Packet Tracer"
+              >
+
+              <span class="caption">
+                Erreur confirmée
+                <small>Fa0/5 dans le VLAN 1</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="packet-tracer-vlan-correction.png"
+              target="_blank"
+            >
+              <img
+                src="packet-tracer-vlan-correction.png"
+                alt="Correction du VLAN et ping réussi"
+              >
+
+              <span class="caption">
+                Correction validée
+                <small>Fa0/5 dans VLAN 20 et ping réussi</small>
+              </span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <p class="eyebrow">Recherche d’alternance</p>
+
+          <h2>Prêt à apprendre et à m’investir.</h2>
+
+          <p>
+            Je recherche une entreprise à Toulouse ou dans sa périphérie
+            pour préparer un BTS SIO SISR ou un Titre TSSR dès septembre 2026.
+          </p>
+
+          <div class="buttons">
+            <a
+              class="button primary"
+              href="https://www.linkedin.com/in/nemanjafilic"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Me contacter sur LinkedIn ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Nemanja Filic — Portfolio IT
+  </footer>
+</body>
 </html>
