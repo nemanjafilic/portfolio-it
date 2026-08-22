@@ -78,8 +78,23 @@
       scroll-margin-top: 75px;
     }
 
-    .tinted {
-      background: rgba(255, 255, 255, 0.018);
+    .section-light {
+      color: #0b1b30;
+      background: #f3f6fa;
+    }
+
+    .section-deep {
+      background: #0d1a2d;
+    }
+
+    .section-projects {
+      background: #07111f;
+      border-top: 1px solid rgba(164, 198, 239, 0.08);
+      border-bottom: 1px solid rgba(164, 198, 239, 0.08);
+    }
+
+    .section-contact {
+      background: #0d1a2d;
     }
 
     .eyebrow {
@@ -262,10 +277,15 @@
       font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-weight: bold;
       text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
     }
 
     .button:hover {
       border-color: rgba(88, 179, 255, 0.65);
+      transform: translateY(-2px);
     }
 
     .button.primary {
@@ -345,6 +365,16 @@
       border: 1px solid var(--border);
       border-radius: 15px;
       background: var(--card);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    details.skill:hover {
+      border-color: rgba(88, 179, 255, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
     }
 
     details.skill[open] {
@@ -398,6 +428,37 @@
       color: #dcecff;
     }
 
+    .section-light .eyebrow {
+      color: #087ac4;
+    }
+
+    .section-light .section-title p {
+      color: #5f6f83;
+    }
+
+    .section-light details.skill {
+      border-color: #d5dde8;
+      background: white;
+      box-shadow: 0 8px 24px rgba(25, 55, 90, 0.05);
+    }
+
+    .section-light details.skill[open] {
+      border-color: #58b3ff;
+    }
+
+    .section-light .skill-name strong {
+      color: #10233c;
+    }
+
+    .section-light .skill-name span,
+    .section-light .skill-description {
+      color: #66778b;
+    }
+
+    .section-light .skill-description strong {
+      color: #17334f;
+    }
+
     /* Parcours */
 
     .career-grid {
@@ -412,6 +473,7 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       background: var(--card);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
     }
 
     .career-date {
@@ -495,6 +557,7 @@
       border: 1px solid var(--border);
       border-radius: 21px;
       background: linear-gradient(145deg, var(--card), #0a1626);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
     }
 
     .project-header {
@@ -599,10 +662,14 @@
       border-radius: 13px;
       background: #091525;
       text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .evidence:hover {
       border-color: rgba(88, 179, 255, 0.65);
+      transform: translateY(-3px);
     }
 
     .evidence img {
@@ -837,7 +904,7 @@
 
         <ul class="hero-info">
           <li>
-            Toulouse et périphérie — permis A/B et véhiculé
+            Toulouse · Permis A/B · Véhiculé · Français · Serbe · Anglais C1
           </li>
         </ul>
       </div>
@@ -855,7 +922,7 @@
       </aside>
     </header>
 
-    <section class="tinted" id="competences">
+    <section class="section-light" id="competences">
       <div class="container">
         <div class="section-title">
           <p class="eyebrow">
@@ -1013,24 +1080,24 @@
           <details class="skill">
             <summary>
               <span class="skill-name">
-                <strong>Langues</strong>
-                <span>Français · Serbe · Anglais</span>
+                <strong>Communication utilisateur</strong>
+                <span>Clarté et adaptation</span>
               </span>
 
               <span class="plus">+</span>
             </summary>
 
             <p class="skill-description">
-              Français langue maternelle, serbe courant et anglais
-              niveau C1, notamment pour la lecture de documentation
-              technique et les échanges professionnels.
+              Reformulation d’une demande, explication d’une solution
+              sans jargon et adaptation du discours au niveau technique
+              de l’interlocuteur.
             </p>
           </details>
         </div>
       </div>
     </section>
 
-    <section id="parcours">
+    <section class="section-deep" id="parcours">
       <div class="container">
         <div class="section-title">
           <p class="eyebrow">
@@ -1052,7 +1119,7 @@
         <div class="career-grid">
           <article class="career-card">
             <span class="career-date">
-              2023 — 2026
+              2018 — 2025
             </span>
 
             <h3>
@@ -1158,7 +1225,7 @@
       </div>
     </section>
 
-    <section class="tinted" id="projets">
+    <section class="section-projects" id="projets">
       <div class="container">
         <div class="section-title">
           <p class="eyebrow">
@@ -1435,7 +1502,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section class="section-contact" id="contact">
       <div class="container">
         <div class="contact-box">
           <p class="eyebrow">
