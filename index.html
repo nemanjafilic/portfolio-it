@@ -3,12 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Nemanja Filic, candidat en alternance en support informatique, systèmes et réseaux à Toulouse.">
+
+  <meta
+    name="description"
+    content="Portfolio de Nemanja Filic, candidat en support informatique, systèmes et réseaux à Toulouse."
+  >
+
   <title>Nemanja Filic | Portfolio IT</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     :root {
@@ -38,8 +47,16 @@
       font-family: "Inter", Arial, Helvetica, sans-serif;
       line-height: 1.6;
       background:
-        radial-gradient(circle at 85% 4%, rgba(88, 179, 255, 0.15), transparent 30rem),
-        radial-gradient(circle at 5% 45%, rgba(86, 223, 160, 0.07), transparent 26rem),
+        radial-gradient(
+          circle at 85% 4%,
+          rgba(88, 179, 255, 0.15),
+          transparent 30rem
+        ),
+        radial-gradient(
+          circle at 5% 45%,
+          rgba(86, 223, 160, 0.07),
+          transparent 26rem
+        ),
         var(--bg);
     }
 
@@ -245,6 +262,10 @@
       font-family: "Manrope", Arial, Helvetica, sans-serif;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    .button:hover {
+      border-color: rgba(88, 179, 255, 0.65);
     }
 
     .button.primary {
@@ -651,10 +672,6 @@
       color: var(--muted);
     }
 
-    .contact-box .buttons {
-      justify-content: center;
-    }
-
     .contact-details {
       display: flex;
       flex-wrap: wrap;
@@ -679,6 +696,10 @@
     .contact-detail:hover {
       border-color: rgba(88, 179, 255, 0.65);
       color: var(--blue);
+    }
+
+    .contact-box .buttons {
+      justify-content: center;
     }
 
     footer {
@@ -783,8 +804,18 @@
         <a href="#competences">Compétences</a>
         <a href="#parcours">Parcours</a>
         <a href="#projets">Projets</a>
-        <a class="cv-link" href="CV-Nemanja-Filic.pdf" target="_blank">CV</a>
-        <a class="contact-link" href="#contact">Contact</a>
+
+        <a
+          class="cv-link"
+          href="CV-Nemanja-Filic.pdf"
+          target="_blank"
+        >
+          CV
+        </a>
+
+        <a class="contact-link" href="#contact">
+          Contact
+        </a>
       </div>
     </div>
   </nav>
@@ -793,7 +824,7 @@
     <header class="container hero" id="accueil">
       <div>
         <span class="availability">
-          Disponible immédiatement pour une alternance
+          Disponible immédiatement
         </span>
 
         <h1>
@@ -802,11 +833,11 @@
         </h1>
 
         <p class="hero-text">
-          Je suis <strong>Nemanja Filic</strong>, en reconversion vers
-          l’informatique et candidat en BTS SIO SISR ou Titre TSSR à Toulouse.
-          À travers mes laboratoires, j’apprends à qualifier une demande,
-          diagnostiquer sa cause, corriger l’incident, tester puis documenter
-          la solution.
+          Je suis <strong>Nemanja Filic</strong>, en reconversion vers les
+          métiers du support informatique, des systèmes et réseaux.
+          Je développe des laboratoires concrets pour apprendre à qualifier
+          une demande, diagnostiquer sa cause, corriger l’incident, tester
+          puis documenter la solution.
         </p>
 
         <div class="buttons">
@@ -834,7 +865,9 @@
 
         <ul class="hero-info">
           <li>
-            <a href="tel:+33767749553">07 67 74 95 53</a>
+            <a href="tel:+33767749553">
+              07 67 74 95 53
+            </a>
           </li>
 
           <li>
@@ -846,11 +879,18 @@
           <li>
             Toulouse et périphérie — permis A/B et véhiculé
           </li>
+
+          <li>
+            Français langue maternelle · Serbe courant · Anglais C1
+          </li>
         </ul>
       </div>
 
       <aside class="photo-card">
-        <img src="unnamed.png" alt="Portrait de Nemanja Filic">
+        <img
+          src="unnamed.png"
+          alt="Portrait de Nemanja Filic"
+        >
 
         <div class="photo-label">
           <strong>Technicien support junior</strong>
@@ -862,13 +902,17 @@
     <section class="tinted" id="competences">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">Compétences techniques</p>
+          <p class="eyebrow">
+            Compétences techniques
+          </p>
 
-          <h2>Compétences mises en pratique</h2>
+          <h2>
+            Compétences mises en pratique
+          </h2>
 
           <p>
-            Des bases acquises par la pratique dans mes laboratoires GLPI
-            et Cisco Packet Tracer. Chaque compétence est accompagnée
+            Des bases acquises par la pratique dans mes laboratoires
+            GLPI et Cisco Packet Tracer. Chaque compétence est accompagnée
             d’un exemple précis de mise en pratique.
           </p>
         </div>
@@ -891,9 +935,10 @@
             </summary>
 
             <p class="skill-description">
-              <strong>Pratiqué avec deux incidents :</strong> une panne
-              d’impression et une perte de connexion réseau. Analyse du
-              symptôme, vérifications, correction, test final et compte rendu.
+              <strong>Pratiqué avec deux incidents :</strong>
+              une panne d’impression et une perte de connexion réseau.
+              Analyse du symptôme, vérifications, correction,
+              test final et compte rendu.
             </p>
           </details>
 
@@ -908,9 +953,9 @@
             </summary>
 
             <p class="skill-description">
-              Création des utilisateurs et équipements, catégories, priorité,
-              attribution au technicien, association du matériel, suivi et
-              clôture avec une solution documentée.
+              Création des utilisateurs et équipements, catégories,
+              priorité, attribution au technicien, association du matériel,
+              suivi et clôture avec une solution documentée.
             </p>
           </details>
 
@@ -926,7 +971,8 @@
 
             <p class="skill-description">
               Configuration d’adresses statiques, compréhension d’un réseau
-              /24, définition de la passerelle et tests de connectivité par ping.
+              /24, définition de la passerelle et tests de connectivité
+              par ping.
             </p>
           </details>
 
@@ -941,9 +987,9 @@
             </summary>
 
             <p class="skill-description">
-              Pool DHCP configuré sur routeur Cisco avec plage, exclusions
-              et passerelle par défaut. Le DNS est compris dans son principe
-              et reste en cours de consolidation.
+              Pool DHCP configuré sur routeur Cisco avec plage,
+              exclusions et passerelle par défaut. Le DNS est compris
+              dans son principe et reste en cours de consolidation.
             </p>
           </details>
 
@@ -958,9 +1004,9 @@
             </summary>
 
             <p class="skill-description">
-              Création du VLAN TECH, affectation des ports du switch et
-              diagnostic d’un poste placé dans le mauvais VLAN avec
-              vérification en ligne de commande.
+              Création du VLAN TECH, affectation des ports du switch
+              et diagnostic d’un poste placé dans le mauvais VLAN
+              avec vérification en ligne de commande.
             </p>
           </details>
 
@@ -975,9 +1021,9 @@
             </summary>
 
             <p class="skill-description">
-              Réseau construit avec postes, imprimante, switch 2960 et
-              routeur 2911 : adressage, DHCP, VLAN, commandes CLI, pings
-              et simulation de pannes.
+              Réseau construit avec postes, imprimante, switch 2960
+              et routeur 2911 : adressage, DHCP, VLAN, commandes CLI,
+              pings et simulation de pannes.
             </p>
           </details>
 
@@ -992,8 +1038,9 @@
             </summary>
 
             <p class="skill-description">
-              Utilisation et paramétrage Windows, identification des composants,
-              installation d’outils et diagnostic matériel de premier niveau.
+              Utilisation et paramétrage Windows, identification des
+              composants, installation d’outils et diagnostic matériel
+              de premier niveau.
             </p>
           </details>
 
@@ -1008,25 +1055,26 @@
             </summary>
 
             <p class="skill-description">
-              Description du symptôme, étapes de diagnostic, correction
-              appliquée, résultat des tests et rédaction d’un compte rendu
-              compréhensible.
+              Description du symptôme, étapes de diagnostic,
+              correction appliquée, résultat des tests et rédaction
+              d’un compte rendu compréhensible.
             </p>
           </details>
 
           <details class="skill">
             <summary>
               <span class="skill-name">
-                <strong>Anglais C1</strong>
-                <span>Documentation et échanges</span>
+                <strong>Langues</strong>
+                <span>Français · Serbe · Anglais</span>
               </span>
 
               <span class="plus">+</span>
             </summary>
 
             <p class="skill-description">
-              Lecture de documentation technique en anglais et capacité à
-              communiquer avec un utilisateur ou un interlocuteur anglophone.
+              Français langue maternelle, serbe courant et anglais
+              niveau C1, notamment pour la lecture de documentation
+              technique et les échanges professionnels.
             </p>
           </details>
         </div>
@@ -1036,77 +1084,113 @@
     <section id="parcours">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">Parcours professionnel</p>
+          <p class="eyebrow">
+            Parcours professionnel
+          </p>
 
-          <h2>Une expérience opérationnelle transférable à l’IT</h2>
+          <h2>
+            Une expérience directement utile au support informatique
+          </h2>
 
           <p>
-            Plusieurs années dans un environnement exigeant m’ont appris à
-            coordonner une activité, gérer les priorités et maintenir un haut
-            niveau de service sous pression. Je transpose aujourd’hui ces
-            acquis au support informatique.
+            Plusieurs années au contact direct des clients m’ont appris
+            à comprendre une demande, gérer plusieurs priorités et
+            apporter une réponse claire dans un environnement exigeant.
+            Des acquis directement applicables au support informatique.
           </p>
         </div>
 
         <div class="career-grid">
           <article class="career-card">
-            <span class="career-date">2023 — 2026</span>
+            <span class="career-date">
+              2023 — 2026
+            </span>
 
-            <h3>Responsable de service</h3>
+            <h3>
+              Responsable de service
+            </h3>
 
             <p>
-              Responsable du bon déroulement du service, de la coordination
-              de l’équipe et de la gestion des situations imprévues. Cette
-              fonction m’a appris à décider rapidement, organiser les priorités
-              et assumer la qualité du résultat collectif.
+              Point de contact privilégié des clients, j’ai appris à
+              identifier rapidement un besoin, reformuler une demande
+              et rechercher une solution adaptée tout en gérant les
+              priorités. Cette expérience m’a également donné le sens
+              du service, de la constance et de l’engagement.
             </p>
 
             <div class="qualities">
               <div class="quality">
-                <strong>Coordination opérationnelle</strong>
+                <strong>Relation utilisateur</strong>
+
                 <span>
-                  Organiser l’activité et répartir efficacement les priorités
+                  Comprendre une demande, reformuler le besoin
+                  et communiquer avec clarté
                 </span>
               </div>
 
               <div class="quality">
-                <strong>Gestion des situations critiques</strong>
+                <strong>Gestion des priorités</strong>
+
                 <span>
-                  Réagir rapidement tout en maintenant la continuité du service
+                  Évaluer l’urgence, organiser les actions
+                  et assurer un suivi rigoureux
                 </span>
               </div>
 
               <div class="quality">
-                <strong>Encadrement & transmission</strong>
+                <strong>Résolution d’imprévus</strong>
+
                 <span>
-                  Accompagner l’équipe et communiquer des consignes précises
+                  Garder son calme, analyser la situation
+                  et rechercher une solution efficace
                 </span>
               </div>
 
               <div class="quality">
-                <strong>Exigence de résultat</strong>
+                <strong>Engagement durable</strong>
+
                 <span>
-                  Contrôler la qualité du service et assumer les responsabilités
+                  S’investir avec constance et construire
+                  une relation de confiance dans le temps
                 </span>
               </div>
             </div>
           </article>
 
           <article class="promise-card">
-            <p class="eyebrow">Mon projet professionnel</p>
+            <p class="eyebrow">
+              Mon projet professionnel
+            </p>
 
-            <h3>Construire une collaboration durable</h3>
+            <h3>
+              Construire une collaboration durable
+            </h3>
 
             <p>
-              Je recherche avant tout de la stabilité et une entreprise dans
-              laquelle m’investir sur le long terme. Mon objectif ne se limite
-              pas à valider une formation : je souhaite progresser, devenir
-              autonome et poursuivre mon évolution au sein de l’équipe qui
-              m’aura formé, si la collaboration répond aux attentes de chacun.
+              Je recherche avant tout de la stabilité et une entreprise
+              dans laquelle m’investir sur le long terme.
+            </p>
+
+            <p>
+              Je suis pleinement conscient que l’accueil et la formation
+              d’un alternant représentent un véritable investissement
+              en temps, en transmission et en confiance pour l’équipe.
+              C’est précisément pour cette raison que mon objectif
+              ne se limite pas à valider une formation.
+            </p>
+
+            <p>
+              Je souhaite m’impliquer à 100 %, progresser vers une réelle
+              autonomie et transformer cet investissement en compétences
+              utiles à l’entreprise. Si les attentes sont partagées,
+              mon souhait est de poursuivre mon évolution au sein de
+              l’équipe qui m’aura formé après la formation.
             </p>
 
             <ul class="promise-list">
-              <li>M’investir pleinement dans les missions confiées</li>
+              <li>
+                M’investir pleinement dans les missions confiées
+              </li>
 
               <li>
                 Capitaliser sur chaque apprentissage par la documentation
@@ -1128,9 +1212,13 @@
     <section class="tinted" id="projets">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">Projets techniques</p>
+          <p class="eyebrow">
+            Projets techniques
+          </p>
 
-          <h2>Des scénarios techniques documentés de bout en bout</h2>
+          <h2>
+            Des scénarios techniques documentés de bout en bout
+          </h2>
 
           <p>
             Chaque projet suit la même méthode : ticket, diagnostic,
@@ -1145,33 +1233,41 @@
                 Projet 01 · Support / Impression
               </div>
 
-              <h3>Incident d’impression au poste d’accueil</h3>
+              <h3>
+                Incident d’impression au poste d’accueil
+              </h3>
 
               <p class="project-subtitle">
-                Vérification du réseau puis résolution d’une tâche bloquée
-                dans la file d’impression.
+                Vérification du réseau puis résolution d’une tâche
+                bloquée dans la file d’impression.
               </p>
             </div>
 
-            <span class="tag">GLPI · Support N1</span>
+            <span class="tag">
+              GLPI · Support N1
+            </span>
           </div>
 
           <div class="steps">
             <div class="step">
               <span>1</span>
 
-              <h4>Ticket pris en charge</h4>
+              <h4>
+                Ticket pris en charge
+              </h4>
 
               <p>
-                Demande catégorisée, attribuée au technicien et reliée
-                au poste ainsi qu’à l’imprimante.
+                Demande catégorisée, attribuée au technicien et
+                reliée au poste ainsi qu’à l’imprimante.
               </p>
             </div>
 
             <div class="step">
               <span>2</span>
 
-              <h4>Réseau vérifié</h4>
+              <h4>
+                Réseau vérifié
+              </h4>
 
               <p>
                 Le PC-Accueil joint l’imprimante 192.168.0.5 avec
@@ -1182,7 +1278,9 @@
             <div class="step">
               <span>3</span>
 
-              <h4>Résolution</h4>
+              <h4>
+                Résolution
+              </h4>
 
               <p>
                 Tâche bloquée supprimée, service d’impression relancé
@@ -1192,8 +1290,9 @@
           </div>
 
           <div class="result">
-            <strong>Résultat :</strong> l’impression est rétablie et la
-            résolution est documentée dans GLPI.
+            <strong>Résultat :</strong>
+            l’impression est rétablie et la résolution est documentée
+            dans GLPI.
           </div>
 
           <div class="gallery">
@@ -1209,7 +1308,10 @@
 
               <span class="caption">
                 Ticket pris en charge
-                <small>Demande et équipements associés</small>
+
+                <small>
+                  Demande et équipements associés
+                </small>
               </span>
             </a>
 
@@ -1225,7 +1327,10 @@
 
               <span class="caption">
                 Connectivité validée
-                <small>Ping vers l’imprimante : 0 % de perte</small>
+
+                <small>
+                  Ping vers l’imprimante : 0 % de perte
+                </small>
               </span>
             </a>
 
@@ -1241,7 +1346,10 @@
 
               <span class="caption">
                 Incident résolu
-                <small>File débloquée, service relancé, test OK</small>
+
+                <small>
+                  File débloquée, service relancé, test OK
+                </small>
               </span>
             </a>
           </div>
@@ -1254,7 +1362,9 @@
                 Projet 02 · Réseau / VLAN
               </div>
 
-              <h3>PC-Tech-02 sans connexion réseau</h3>
+              <h3>
+                PC-Tech-02 sans connexion réseau
+              </h3>
 
               <p class="project-subtitle">
                 Diagnostic d’un port de switch affecté au mauvais VLAN
@@ -1262,14 +1372,18 @@
               </p>
             </div>
 
-            <span class="tag">Cisco · VLAN</span>
+            <span class="tag">
+              Cisco · VLAN
+            </span>
           </div>
 
           <div class="steps">
             <div class="step">
               <span>1</span>
 
-              <h4>Ticket réseau</h4>
+              <h4>
+                Ticket réseau
+              </h4>
 
               <p>
                 Le poste n’accède plus aux ressources réseau.
@@ -1280,7 +1394,9 @@
             <div class="step">
               <span>2</span>
 
-              <h4>Cause identifiée</h4>
+              <h4>
+                Cause identifiée
+              </h4>
 
               <p>
                 Le ping échoue et le contrôle du switch montre que
@@ -1291,7 +1407,9 @@
             <div class="step">
               <span>3</span>
 
-              <h4>Correction & test</h4>
+              <h4>
+                Correction & test
+              </h4>
 
               <p>
                 Fa0/5 est réaffecté au VLAN 20 — TECH.
@@ -1301,8 +1419,9 @@
           </div>
 
           <div class="result">
-            <strong>Résultat :</strong> le poste retrouve son VLAN,
-            la connectivité est restaurée et le ticket est clôturé.
+            <strong>Résultat :</strong>
+            le poste retrouve son VLAN, la connectivité est restaurée
+            et le ticket est clôturé.
           </div>
 
           <div class="gallery">
@@ -1318,7 +1437,10 @@
 
               <span class="caption">
                 Ticket & compte rendu
-                <small>Demande, analyse et clôture</small>
+
+                <small>
+                  Demande, analyse et clôture
+                </small>
               </span>
             </a>
 
@@ -1334,7 +1456,10 @@
 
               <span class="caption">
                 Erreur confirmée
-                <small>Fa0/5 dans le VLAN 1</small>
+
+                <small>
+                  Fa0/5 dans le VLAN 1
+                </small>
               </span>
             </a>
 
@@ -1350,7 +1475,10 @@
 
               <span class="caption">
                 Correction validée
-                <small>Fa0/5 dans VLAN 20 et ping réussi</small>
+
+                <small>
+                  Fa0/5 dans VLAN 20 et ping réussi
+                </small>
               </span>
             </a>
           </div>
@@ -1361,18 +1489,26 @@
     <section id="contact">
       <div class="container">
         <div class="contact-box">
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow">
+            Contact
+          </p>
 
-          <h2>Disponible pour rejoindre votre équipe.</h2>
+          <h2>
+            Disponible pour rejoindre votre équipe.
+          </h2>
 
           <p>
-            Je recherche dès maintenant une alternance en support informatique,
-            systèmes ou réseaux à Toulouse et dans sa périphérie, dans le cadre
-            d’un BTS SIO SISR ou d’un Titre TSSR.
+            Je recherche dès maintenant une première opportunité
+            en support informatique, systèmes ou réseaux,
+            en alternance ou sur un poste junior,
+            à Toulouse et dans sa périphérie.
           </p>
 
           <div class="contact-details">
-            <a class="contact-detail" href="tel:+33767749553">
+            <a
+              class="contact-detail"
+              href="tel:+33767749553"
+            >
               07 67 74 95 53
             </a>
 
