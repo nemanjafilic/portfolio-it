@@ -959,8 +959,8 @@
           <h2>Compétences mises en pratique</h2>
 
           <p>
-            Compétences de niveau junior développées à travers mes laboratoires
-            GLPI et Cisco Packet Tracer.
+            Compétences de niveau junior mises en pratique dans mes laboratoires
+            GLPI, Cisco Packet Tracer et Windows Server / Active Directory.
           </p>
         </div>
 
@@ -1027,8 +1027,8 @@
 
             <p class="skill-description">
               Pool DHCP configuré sur routeur Cisco avec plage, exclusions et
-              passerelle par défaut. Le DNS est compris dans son principe et
-              reste en cours de consolidation.
+              passerelle par défaut. DNS configuré sur DC01 avec résolution de
+              agence.test et validation des enregistrements SRV Active Directory.
             </p>
           </details>
 
@@ -1069,16 +1069,34 @@
           <details class="skill">
             <summary>
               <span class="skill-name">
-                <strong>Windows & matériel</strong>
-                <span>Postes de travail</span>
+                <strong>Windows 10/11 & virtualisation</strong>
+                <span>Postes clients · VirtualBox</span>
               </span>
 
               <span class="plus">+</span>
             </summary>
 
             <p class="skill-description">
-              Utilisation et paramétrage Windows, identification des composants,
-              installation d’outils et diagnostic matériel de premier niveau.
+              Installation et paramétrage de postes Windows, création de machines
+              virtuelles sous VirtualBox, configuration réseau et intégration d’un
+              poste Windows 11 Pro dans un environnement client/serveur.
+            </p>
+          </details>
+
+          <details class="skill">
+            <summary>
+              <span class="skill-name">
+                <strong>Windows Server & Active Directory</strong>
+                <span>AD DS · DNS · OU · Groupes · GPO</span>
+              </span>
+
+              <span class="plus">+</span>
+            </summary>
+
+            <p class="skill-description">
+              Déploiement de Windows Server 2025 avec AD DS et DNS, création du
+              domaine agence.test, organisation des OU, comptes et groupes de
+              sécurité, puis création et validation d’une stratégie de groupe.
             </p>
           </details>
 
@@ -1237,11 +1255,12 @@
         <div class="section-title">
           <p class="eyebrow">Projets techniques</p>
 
-          <h2>Des scénarios techniques documentés de bout en bout</h2>
+          <h2>Trois projets techniques documentés de bout en bout</h2>
 
           <p>
-            Chaque projet suit la même méthode : ticket, diagnostic,
-            correction, test de validation et compte rendu.
+            Support, réseau et administration Windows : chaque projet reproduit
+            une situation concrète, avec configuration, diagnostic, validation
+            et documentation des actions réalisées.
           </p>
         </div>
 
@@ -1464,6 +1483,207 @@
               <span class="caption">
                 Correction validée
                 <small>Fa0/5 dans le VLAN 20 et ping réussi</small>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <div class="project-number">
+                Projet 03 · Windows Server / Active Directory
+              </div>
+
+              <h3>Déploiement d’un environnement de domaine Windows</h3>
+
+              <p class="project-subtitle">
+                Mise en place d’un contrôleur de domaine Windows Server 2025,
+                structuration d’Active Directory, intégration d’un poste Windows 11
+                et validation des stratégies de groupe.
+              </p>
+            </div>
+
+            <span class="tag">Windows Server · AD DS · GPO</span>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <span>1</span>
+
+              <h4>Déploiement de DC01</h4>
+
+              <p>
+                Installation de Windows Server 2025, configuration d’une IP
+                statique, déploiement d’AD DS et DNS puis création du domaine
+                agence.test.
+              </p>
+            </div>
+
+            <div class="step">
+              <span>2</span>
+
+              <h4>Active Directory & GPO</h4>
+
+              <p>
+                Création des OU IT, RH et Commercial, des utilisateurs et groupes
+                de sécurité, puis déploiement d’une GPO dédiée au service IT.
+              </p>
+            </div>
+
+            <div class="step">
+              <span>3</span>
+
+              <h4>Intégration du poste client</h4>
+
+              <p>
+                Configuration de PC-TECH-03, tests réseau et DNS, jonction au
+                domaine, authentification avec un compte AD et validation de la GPO.
+              </p>
+            </div>
+          </div>
+
+          <div class="result">
+            <strong>Résultat :</strong> PC-TECH-03 est intégré au domaine
+            agence.test, authentifié via DC01 et soumis aux stratégies du service
+            IT. La préparation et la mise en service sont documentées puis
+            clôturées dans GLPI.
+          </div>
+
+          <div class="gallery">
+            <a
+              class="evidence"
+              href="ws-dc01-domaine.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-dc01-domaine.png"
+                alt="Contrôleur de domaine DC01 sous Windows Server 2025"
+              >
+
+              <span class="caption">
+                Contrôleur de domaine DC01
+                <small>Windows Server 2025 · agence.test · 192.168.0.10</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="ws-ad-ou.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-ad-ou.png"
+                alt="Structure des unités d’organisation Active Directory"
+              >
+
+              <span class="caption">
+                Structure Active Directory
+                <small>OU Utilisateurs et Ordinateurs · IT · RH · Commercial</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="ws-gpo-config.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-gpo-config.png"
+                alt="Configuration d’une stratégie de groupe pour le service IT"
+              >
+
+              <span class="caption">
+                Stratégie de groupe
+                <small>Restriction du Panneau de configuration pour l’OU IT</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="ws-reseau-dns.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-reseau-dns.png"
+                alt="Tests réseau et DNS entre PC-TECH-03 et DC01"
+              >
+
+              <span class="caption">
+                Réseau & DNS validés
+                <small>Ping DC01 · DNS · découverte LDAP du contrôleur</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="ws-jonction-domaine.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-jonction-domaine.png"
+                alt="PC-TECH-03 rejoint le domaine agence.test"
+              >
+
+              <span class="caption">
+                Jonction au domaine
+                <small>PC-TECH-03 rejoint agence.test avec succès</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="ws-validation-gpo.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-validation-gpo.png"
+                alt="Validation du compte de domaine et de la GPO avec gpresult"
+              >
+
+              <span class="caption">
+                Authentification & GPO
+                <small>Compte AGENCE\nfilic · DC01 · gpresult</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="ws-gpo-bloquee.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-gpo-bloquee.png"
+                alt="Restriction Windows appliquée par stratégie de groupe"
+              >
+
+              <span class="caption">
+                GPO testée en conditions réelles
+                <small>Accès au Panneau de configuration correctement bloqué</small>
+              </span>
+            </a>
+
+            <a
+              class="evidence"
+              href="ws-glpi-ticket.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="ws-glpi-ticket.png"
+                alt="Ticket GLPI de préparation de PC-TECH-03 clôturé"
+              >
+
+              <span class="caption">
+                Mise en service documentée
+                <small>Demande GLPI · solution validée · ticket clôturé</small>
               </span>
             </a>
           </div>
